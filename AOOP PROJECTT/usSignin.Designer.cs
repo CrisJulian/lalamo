@@ -75,6 +75,7 @@
             button1.TabIndex = 28;
             button1.Text = "Create Account";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click_1;
             // 
             // txtEmail
             // 
@@ -86,7 +87,7 @@
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(281, 31);
             txtEmail.TabIndex = 27;
-            txtEmail.Text = "you@gmail.com";
+            txtEmail.Text = "you@example.com";
             txtEmail.Enter += txtEmail_Enter;
             txtEmail.Leave += txtEmail_Leave;
             // 

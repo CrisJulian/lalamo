@@ -14,21 +14,11 @@ namespace AOOP_PROJECTT
         public Form1()
         {
             InitializeComponent();
+            rightsidepanel.Controls.Clear();
+            var dashboard = new usDashboard();
+            dashboard.Dock = DockStyle.Fill;
+            rightsidepanel.Controls.Add(dashboard);
 
-            login = new usLogin(); // Use the field, not a local variable
-
-            login.LoginSuccessful += (s, ev) =>
-            {
-                MessageBox.Show("login success!");
-            };
-
-            login.NavigateToSignin += (s, ev) =>
-            {
-                MessageBox.Show("Form1 received the event!");
-                NavigateFullScreen(new usSignin());
-            };
-
-            NavigateFullScreen(login);
         }
 
         public void NavigateTo(UserControl uc)

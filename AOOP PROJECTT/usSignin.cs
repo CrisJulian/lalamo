@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Data.SqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -107,6 +108,57 @@ namespace AOOP_PROJECTT
                 txtConfirmPassword.Text = "Re-enter your password";
                 txtConfirmPassword.ForeColor = Color.Gray;
                 txtConfirmPassword.UseSystemPasswordChar = false;
+            }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            string fullName = txtFullName.Text.Trim();
+            string email = txtEmail.Text.Trim();
+            string password = txtPassword.Text.Trim();
+
+            if (string.IsNullOrEmpty(fullName) || fullName == "Juan Dela Cruz" ||
+                string.IsNullOrEmpty(email) || email == "you@example.com" ||
+                string.IsNullOrEmpty(password) || password == "At least 8 characters")
+            {
+                MessageBox.Show("Please fill in all fields.");
+                return;
+            }
+
+            if (txtPassword.Text != txtConfirmPassword.Text)
+            {
+                MessageBox.Show("Passwords do not match.");
+                return;
+            }
+
+            try
+            {
+                using (var con = DatabaseHelper.GetConnection())
+                {
+                    con.Open();
+                    string query = "INSERT INTO Users (FullName, Email, PasswordHash) VALUES (@FullName, @Email, @Password)";
+
+                    using (var cmd = new SqlCommand(query, con))
+                    {
+                        cmd.Parameters.AddWithValue("@FullName", fullName);
+                        cmd.Parameters.AddWithValue("@Email", email);
+                        cmd.Parameters.AddWithValue("@Password", password);
+
+                        int rows = cmd.ExecuteNonQuery();
+
+                        if (rows > 0)
+                        {
+                            MessageBox.Show("Account created successfully!");
+                            AccountCreated?.Invoke(this, EventArgs.Empty); // navigate after success
+                        }
+                        else
+                            MessageBox.Show("Something went wrong.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Database error: " + ex.Message);
             }
         }
     }
