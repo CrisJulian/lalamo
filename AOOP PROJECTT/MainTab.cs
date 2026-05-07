@@ -19,6 +19,7 @@ namespace AOOP_PROJECTT
             dashboard.Dock = DockStyle.Fill;
             rightsidepanel.Controls.Add(dashboard);
 
+
         }
 
         public void NavigateTo(UserControl uc)
@@ -50,7 +51,7 @@ namespace AOOP_PROJECTT
 
         private void Form1_Load(object sender, EventArgs e)
         {
-       
+           
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -89,8 +90,11 @@ namespace AOOP_PROJECTT
         private void button3_Click(object sender, EventArgs e)
         {
             rightsidepanel.Controls.Clear();
-            var dashboard = new usTransaction();
-            rightsidepanel.Controls.Add(dashboard);
+
+            var transaction = new usTransaction();
+            transaction.Dock = DockStyle.Fill;
+            rightsidepanel.Controls.Add(transaction);
+            transaction.BringToFront();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -120,23 +124,17 @@ namespace AOOP_PROJECTT
         private void button5_Click(object sender, EventArgs e)
         {
             rightsidepanel.Controls.Clear();
-            var dashboard = new usBudget_and_Goals();
-            rightsidepanel.Controls.Add(new BudgetsGoalsTab());
-
-            var tabBudgets = new TabPage("Budgets & Goals") { BackColor = Color.FromArgb(22, 27, 38), Padding = new Padding(0) };
-
+            var dashboard = new BudgetsGoalsTab();
+            dashboard.Dock = DockStyle.Fill;
+            rightsidepanel.Controls.Add(dashboard);
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
             rightsidepanel.Controls.Clear();
             var dashboard = new DebtsTab();
-            rightsidepanel.Controls.Add(new DebtsTab());
-
-
-            var tabBudgets = new TabPage("Budgets & Goals") { BackColor = Color.FromArgb(22, 27, 38), Padding = new Padding(0) };
-
-
+            dashboard.Dock = DockStyle.Fill;
+            rightsidepanel.Controls.Add(dashboard);
         }
 
         private void button7_Click(object sender, EventArgs e)

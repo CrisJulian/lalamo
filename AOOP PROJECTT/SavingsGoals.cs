@@ -3,6 +3,7 @@ namespace CommonCents
 {
     public class SavingsGoal
     {
+        public int GoalId { get; set; } = 0;
         public string Name { get; set; }
         public double Target { get; set; }
         public double Saved { get; set; }

@@ -58,23 +58,43 @@ namespace AOOP_PROJECTT
                 using (var conn = DatabaseHelper.GetConnection())
                 {
                     conn.Open();
-                    string query = "SELECT COUNT(*) FROM Users WHERE Email = @email AND PasswordHash = @password";
+                    string query = @"
+                SELECT UserId, FullName, Email,
+                       ISNULL(Phone, '')            AS Phone,
+                       ISNULL(Location, '')         AS Location,
+                       ISNULL(AccountType,'PERSONAL') AS AccountType,
+                       CreatedAt
+                FROM Users
+                WHERE Email = @email
+                  AND PasswordHash = @password";
 
                     using (var cmd = new SqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@email", email);
                         cmd.Parameters.AddWithValue("@password", password);
 
-                        int count = (int)cmd.ExecuteScalar();
-                        return count > 0;
+                        using (var reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                SessionManager.UserId = reader.GetInt32(0);
+                                SessionManager.FullName = reader.GetString(1);
+                                SessionManager.Email = reader.GetString(2);
+                                SessionManager.Phone = reader.GetString(3);
+                                SessionManager.Location = reader.GetString(4);
+                                SessionManager.AccountType = reader.GetString(5);
+                                SessionManager.MemberSince = reader.GetDateTime(6);
+                                return true;
+                            }
+                        }
                     }
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Database error: " + ex.Message, "Error");
-                return false;
             }
+            return false;
         }
 
         private void textBox5_TextChanged(object sender, EventArgs e)
