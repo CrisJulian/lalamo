@@ -90,8 +90,7 @@ namespace AOOP_PROJECTT
         private void button3_Click(object sender, EventArgs e)
         {
             rightsidepanel.Controls.Clear();
-
-            var transaction = new usTransaction();
+            var transaction = new usTransactionNew();
             transaction.Dock = DockStyle.Fill;
             rightsidepanel.Controls.Add(transaction);
             transaction.BringToFront();
@@ -100,8 +99,22 @@ namespace AOOP_PROJECTT
         private void button4_Click(object sender, EventArgs e)
         {
             rightsidepanel.Controls.Clear();
-            var dashboard = new usAnalytics();
-            rightsidepanel.Controls.Add(dashboard);
+
+            int userId = SessionManager.UserId;
+            AppData.Budgets.Clear();
+            AppData.Budgets.AddRange(BudgetRepository.GetBudgets(userId));
+            AppData.Goals.Clear();
+            AppData.Goals.AddRange(BudgetRepository.GetGoals(userId));
+            AppData.Debts.Clear();
+            AppData.Debts.AddRange(DebtRepository.GetDebts(userId));
+            AppData.Transactions.Clear();
+            foreach (var tx in TransactionRepository.GetTransactions(userId))
+                AppData.Transactions.Add(new CommonCents.Transaction(
+                    tx.Date, tx.Amount, tx.Type == "Income", ""));
+
+            var analytics = new AOOP_PROJECTT.AnalyticsTab();
+            analytics.Dock = DockStyle.Fill;
+            rightsidepanel.Controls.Add(analytics);
         }
 
         private void button2_Click(object sender, EventArgs e)

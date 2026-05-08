@@ -21,8 +21,11 @@ namespace AOOP_PROJECTT
 
             // Hide password characters
             textBox15.PasswordChar = '●';
-
             button3.BringToFront();
+
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            this.VisibleChanged += (s, e) => { if (this.Visible) textBox14.Focus(); };
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e) { }
@@ -105,6 +108,26 @@ namespace AOOP_PROJECTT
         private void button3_Click(object sender, EventArgs e)
         {
             NavigateToSignin?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox14_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

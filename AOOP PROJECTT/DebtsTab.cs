@@ -225,6 +225,17 @@ namespace CommonCents
             card.Controls.Add(btnLog);
             card.Resize += (s, e) => btnLog.Location = new Point(card.Width - 126, 12);
 
+            var btnDelete = MakeDeleteButton();
+            card.Controls.Add(btnDelete);
+            card.Resize += (s, e) => btnDelete.Location = new Point(card.Width - btnDelete.Width - 14, 48);
+            btnDelete.Location = new Point(card.Width - btnDelete.Width - 14, 48);
+            btnDelete.Click += (s, e) =>
+            {
+                DebtRepository.DeleteDebt(debt.DebtId);
+                _debts.Remove(debt);
+                RefreshAll();
+            };
+
             int statsY = 62;
             AddStatCol(card, "PRINCIPAL",       $"₱{debt.Principal:N0}",      Color.White, 16,  statsY);
             AddStatCol(card, "AMOUNT PAID",     $"₱{debt.AmountPaid:N0}",     GreenAmt,    170, statsY);
@@ -416,6 +427,39 @@ namespace CommonCents
             path.AddArc(bounds.X,         bounds.Bottom - d, d, d, 90,  90);
             path.CloseFigure();
             return path;
+        }
+
+        private Panel MakeDeleteButton()
+        {
+            var circle = new Panel
+            {
+                Width = 28,
+                Height = 28,
+                BackColor = Color.Transparent,
+                Cursor = Cursors.Hand
+            };
+
+            var lbl = new Label
+            {
+                Text = "X",
+                Font = new Font("Segoe UI", 6.5f, FontStyle.Bold),
+                ForeColor = Color.Red,
+                AutoSize = false,
+                Size = new Size(28, 28),
+                Location = new Point(0, 0),
+                TextAlign = ContentAlignment.MiddleCenter,
+                Enabled = false
+            };
+
+            circle.Paint += (s, e) =>
+            {
+                e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+                using var brush = new SolidBrush(Color.FromArgb(200, 60, 60));
+                e.Graphics.FillEllipse(brush, 1, 1, circle.Width - 3, circle.Height - 3);
+            };
+
+            circle.Controls.Add(lbl);
+            return circle;
         }
     }
 }

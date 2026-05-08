@@ -29,29 +29,29 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(usLogin));
             panel1 = new Panel();
-            textBox9 = new TextBox();
-            textBox8 = new TextBox();
-            textBox7 = new TextBox();
-            textBox6 = new TextBox();
-            textBox5 = new TextBox();
-            textBox4 = new TextBox();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            label8 = new Label();
+            label7 = new Label();
+            label6 = new Label();
+            label5 = new Label();
+            label4 = new Label();
+            label3 = new Label();
+            label2 = new Label();
+            label1 = new Label();
             pictureBox1 = new PictureBox();
             contextMenuStrip1 = new ContextMenuStrip(components);
-            textBox10 = new TextBox();
-            textBox11 = new TextBox();
-            textBox12 = new TextBox();
-            textBox13 = new TextBox();
             contextMenuStrip2 = new ContextMenuStrip(components);
             textBox14 = new TextBox();
             textBox15 = new TextBox();
             button1 = new Button();
             contextMenuStrip3 = new ContextMenuStrip(components);
-            textBox16 = new TextBox();
             button3 = new Button();
+            label9 = new Label();
+            label10 = new Label();
+            label11 = new Label();
+            label12 = new Label();
+            label13 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -59,194 +59,124 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(19, 22, 31);
-            panel1.Controls.Add(textBox9);
-            panel1.Controls.Add(textBox8);
-            panel1.Controls.Add(textBox7);
-            panel1.Controls.Add(textBox6);
-            panel1.Controls.Add(textBox5);
-            panel1.Controls.Add(textBox4);
-            panel1.Controls.Add(textBox3);
-            panel1.Controls.Add(textBox2);
-            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(label8);
+            panel1.Controls.Add(label7);
+            panel1.Controls.Add(label6);
+            panel1.Controls.Add(label5);
+            panel1.Controls.Add(label4);
+            panel1.Controls.Add(label3);
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(label1);
             panel1.Controls.Add(pictureBox1);
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(391, 687);
             panel1.TabIndex = 0;
             // 
-            // textBox9
+            // label8
             // 
-            textBox9.BackColor = Color.FromArgb(19, 22, 31);
-            textBox9.BorderStyle = BorderStyle.None;
-            textBox9.Font = new Font("Microsoft Sans Serif", 10F);
-            textBox9.ForeColor = Color.FromArgb(130, 145, 170);
-            textBox9.Location = new Point(33, 504);
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(355, 16);
-            textBox9.TabIndex = 9;
-            textBox9.Text = "dashboard.";
+            label8.AutoSize = true;
+            label8.Font = new Font("Microsoft Sans Serif", 10F);
+            label8.ForeColor = Color.FromArgb(130, 145, 170);
+            label8.Location = new Point(34, 496);
+            label8.Name = "label8";
+            label8.Size = new Size(80, 17);
+            label8.TabIndex = 18;
+            label8.Text = "application.";
+            label8.Click += label8_Click;
             // 
-            // textBox8
+            // label7
             // 
-            textBox8.BackColor = Color.FromArgb(19, 22, 31);
-            textBox8.BorderStyle = BorderStyle.None;
-            textBox8.Font = new Font("Microsoft Sans Serif", 10F);
-            textBox8.ForeColor = Color.FromArgb(130, 145, 170);
-            textBox8.Location = new Point(33, 482);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(355, 16);
-            textBox8.TabIndex = 8;
-            textBox8.Text = "and understand your spending — all in one clean ";
+            label7.AutoSize = true;
+            label7.Font = new Font("Microsoft Sans Serif", 10F);
+            label7.ForeColor = Color.FromArgb(130, 145, 170);
+            label7.Location = new Point(34, 479);
+            label7.Name = "label7";
+            label7.Size = new Size(317, 17);
+            label7.TabIndex = 17;
+            label7.Text = "and understand your spending — all in one clean ";
             // 
-            // textBox7
+            // label6
             // 
-            textBox7.BackColor = Color.FromArgb(19, 22, 31);
-            textBox7.BorderStyle = BorderStyle.None;
-            textBox7.Font = new Font("Microsoft Sans Serif", 10F);
-            textBox7.ForeColor = Color.FromArgb(130, 145, 170);
-            textBox7.Location = new Point(33, 460);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(338, 16);
-            textBox7.TabIndex = 7;
-            textBox7.Text = "Track transactions, manage budgets, monitor debts,";
-            textBox7.TextChanged += textBox7_TextChanged;
+            label6.AutoSize = true;
+            label6.Font = new Font("Microsoft Sans Serif", 10F);
+            label6.ForeColor = Color.FromArgb(130, 145, 170);
+            label6.Location = new Point(33, 462);
+            label6.Name = "label6";
+            label6.Size = new Size(337, 17);
+            label6.TabIndex = 16;
+            label6.Text = "Track transactions, manage budgets, monitor debts,";
             // 
-            // textBox6
+            // label5
             // 
-            textBox6.BackColor = Color.FromArgb(19, 22, 31);
-            textBox6.BorderStyle = BorderStyle.None;
-            textBox6.Font = new Font("Microsoft Sans Serif", 30.75F, FontStyle.Bold);
-            textBox6.ForeColor = Color.FromArgb(245, 166, 35);
-            textBox6.Location = new Point(33, 407);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(270, 47);
-            textBox6.TabIndex = 6;
-            textBox6.Text = "finances.";
-            textBox6.TextChanged += textBox6_TextChanged;
+            label5.AutoSize = true;
+            label5.Font = new Font("Microsoft Sans Serif", 30.75F, FontStyle.Bold);
+            label5.ForeColor = Color.FromArgb(245, 166, 35);
+            label5.Location = new Point(33, 402);
+            label5.Name = "label5";
+            label5.Size = new Size(195, 47);
+            label5.TabIndex = 15;
+            label5.Text = "finances.";
             // 
-            // textBox5
+            // label4
             // 
-            textBox5.BackColor = Color.FromArgb(19, 22, 31);
-            textBox5.BorderStyle = BorderStyle.None;
-            textBox5.Font = new Font("Microsoft Sans Serif", 35.75F, FontStyle.Bold);
-            textBox5.ForeColor = Color.White;
-            textBox5.Location = new Point(33, 347);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(257, 54);
-            textBox5.TabIndex = 5;
-            textBox5.Text = "your";
-            textBox5.TextChanged += textBox5_TextChanged;
+            label4.AutoSize = true;
+            label4.Font = new Font("Microsoft Sans Serif", 35.75F, FontStyle.Bold);
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(32, 347);
+            label4.Name = "label4";
+            label4.Size = new Size(122, 55);
+            label4.TabIndex = 14;
+            label4.Text = "your";
+            label4.Click += label4_Click;
             // 
-            // textBox4
+            // label3
             // 
-            textBox4.BackColor = Color.FromArgb(19, 22, 31);
-            textBox4.BorderStyle = BorderStyle.None;
-            textBox4.Font = new Font("Microsoft Sans Serif", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textBox4.ForeColor = Color.White;
-            textBox4.Location = new Point(33, 293);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(257, 55);
-            textBox4.TabIndex = 4;
-            textBox4.Text = "control of";
+            label3.AutoSize = true;
+            label3.Font = new Font("Microsoft Sans Serif", 35.75F, FontStyle.Bold);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(26, 298);
+            label3.Name = "label3";
+            label3.Size = new Size(245, 55);
+            label3.TabIndex = 13;
+            label3.Text = "control of ";
             // 
-            // textBox3
+            // label2
             // 
-            textBox3.BackColor = Color.FromArgb(19, 22, 31);
-            textBox3.BorderStyle = BorderStyle.None;
-            textBox3.Font = new Font("Microsoft Sans Serif", 35.75F, FontStyle.Bold);
-            textBox3.ForeColor = Color.White;
-            textBox3.Location = new Point(33, 246);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(227, 54);
-            textBox3.TabIndex = 3;
-            textBox3.Text = "Take";
-            textBox3.TextChanged += textBox3_TextChanged;
+            label2.AutoSize = true;
+            label2.Font = new Font("Microsoft Sans Serif", 35.75F, FontStyle.Bold);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(22, 251);
+            label2.Name = "label2";
+            label2.Size = new Size(135, 55);
+            label2.TabIndex = 12;
+            label2.Text = "Take";
             // 
-            // textBox2
+            // label1
             // 
-            textBox2.BackColor = Color.FromArgb(19, 22, 31);
-            textBox2.BorderStyle = BorderStyle.None;
-            textBox2.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox2.ForeColor = Color.FromArgb(245, 166, 35);
-            textBox2.Location = new Point(33, 225);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(177, 15);
-            textBox2.TabIndex = 2;
-            textBox2.Text = "PERSONAL FINANCE";
-            // 
-            // textBox1
-            // 
-            textBox1.BackColor = Color.FromArgb(19, 22, 31);
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Font = new Font("Segoe UI", 18F);
-            textBox1.ForeColor = Color.White;
-            textBox1.Location = new Point(104, 34);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(177, 32);
-            textBox1.TabIndex = 1;
-            textBox1.Text = "CommonCents";
-            textBox1.TextChanged += textBox1_TextChanged;
+            label1.AutoSize = true;
+            label1.Font = new Font("Microsoft Sans Serif", 9.75F);
+            label1.ForeColor = Color.FromArgb(245, 166, 35);
+            label1.Location = new Point(33, 227);
+            label1.Name = "label1";
+            label1.Size = new Size(141, 16);
+            label1.TabIndex = 11;
+            label1.Text = "PERSONAL FINANCE";
             // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(16, 17);
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(105, 30);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(73, 69);
-            pictureBox1.TabIndex = 0;
+            pictureBox1.Size = new Size(155, 158);
+            pictureBox1.TabIndex = 10;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // contextMenuStrip1
             // 
             contextMenuStrip1.Name = "contextMenuStrip1";
             contextMenuStrip1.Size = new Size(61, 4);
-            // 
-            // textBox10
-            // 
-            textBox10.BackColor = Color.FromArgb(15, 17, 23);
-            textBox10.BorderStyle = BorderStyle.None;
-            textBox10.Font = new Font("Microsoft Sans Serif", 23F);
-            textBox10.ForeColor = Color.White;
-            textBox10.Location = new Point(661, 141);
-            textBox10.Name = "textBox10";
-            textBox10.Size = new Size(227, 35);
-            textBox10.TabIndex = 10;
-            textBox10.Text = "Welcome back";
-            // 
-            // textBox11
-            // 
-            textBox11.BackColor = Color.FromArgb(15, 17, 23);
-            textBox11.BorderStyle = BorderStyle.None;
-            textBox11.Font = new Font("Microsoft Sans Serif", 10F);
-            textBox11.ForeColor = Color.FromArgb(130, 145, 170);
-            textBox11.Location = new Point(661, 182);
-            textBox11.Name = "textBox11";
-            textBox11.Size = new Size(338, 16);
-            textBox11.TabIndex = 10;
-            textBox11.Text = "Sign in to your account to continue";
-            // 
-            // textBox12
-            // 
-            textBox12.BackColor = Color.FromArgb(15, 17, 23);
-            textBox12.BorderStyle = BorderStyle.None;
-            textBox12.Font = new Font("Microsoft Sans Serif", 9F);
-            textBox12.ForeColor = Color.FromArgb(130, 145, 170);
-            textBox12.Location = new Point(661, 246);
-            textBox12.Name = "textBox12";
-            textBox12.Size = new Size(338, 14);
-            textBox12.TabIndex = 11;
-            textBox12.Text = "EMAIL ADDRESS";
-            // 
-            // textBox13
-            // 
-            textBox13.BackColor = Color.FromArgb(15, 17, 23);
-            textBox13.BorderStyle = BorderStyle.None;
-            textBox13.Font = new Font("Microsoft Sans Serif", 9F);
-            textBox13.ForeColor = Color.FromArgb(130, 145, 170);
-            textBox13.Location = new Point(661, 321);
-            textBox13.Name = "textBox13";
-            textBox13.Size = new Size(338, 14);
-            textBox13.TabIndex = 12;
-            textBox13.Text = "PASSWORD";
             // 
             // contextMenuStrip2
             // 
@@ -263,6 +193,7 @@
             textBox14.Name = "textBox14";
             textBox14.Size = new Size(281, 34);
             textBox14.TabIndex = 14;
+            textBox14.TextChanged += textBox14_TextChanged;
             // 
             // textBox15
             // 
@@ -293,23 +224,12 @@
             contextMenuStrip3.Name = "contextMenuStrip3";
             contextMenuStrip3.Size = new Size(61, 4);
             // 
-            // textBox16
-            // 
-            textBox16.BackColor = Color.FromArgb(15, 17, 23);
-            textBox16.BorderStyle = BorderStyle.None;
-            textBox16.ForeColor = Color.FromArgb(130, 145, 170);
-            textBox16.Location = new Point(674, 438);
-            textBox16.Name = "textBox16";
-            textBox16.Size = new Size(166, 16);
-            textBox16.TabIndex = 19;
-            textBox16.Text = "Don't have an account?";
-            // 
             // button3
             // 
             button3.BackgroundImageLayout = ImageLayout.None;
             button3.FlatStyle = FlatStyle.Popup;
             button3.ForeColor = Color.FromArgb(245, 166, 35);
-            button3.Location = new Point(799, 432);
+            button3.Location = new Point(802, 433);
             button3.Name = "button3";
             button3.Size = new Size(74, 26);
             button3.TabIndex = 20;
@@ -317,21 +237,76 @@
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
             // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Microsoft Sans Serif", 23F);
+            label9.ForeColor = Color.White;
+            label9.Location = new Point(656, 174);
+            label9.Name = "label9";
+            label9.Size = new Size(226, 35);
+            label9.TabIndex = 21;
+            label9.Text = "Welcome back!";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Microsoft Sans Serif", 10F);
+            label10.ForeColor = Color.FromArgb(130, 145, 170);
+            label10.Location = new Point(661, 211);
+            label10.Name = "label10";
+            label10.Size = new Size(227, 17);
+            label10.TabIndex = 22;
+            label10.Text = "Sign in to your account to continue";
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Microsoft Sans Serif", 9F);
+            label11.ForeColor = Color.FromArgb(130, 145, 170);
+            label11.Location = new Point(661, 251);
+            label11.Name = "label11";
+            label11.Size = new Size(104, 15);
+            label11.TabIndex = 23;
+            label11.Text = "EMAIL ADDRESS";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new Font("Microsoft Sans Serif", 9F);
+            label12.ForeColor = Color.FromArgb(130, 145, 170);
+            label12.Location = new Point(661, 325);
+            label12.Name = "label12";
+            label12.Size = new Size(76, 15);
+            label12.TabIndex = 24;
+            label12.Text = "PASSWORD";
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Font = new Font("Microsoft Sans Serif", 9F);
+            label13.ForeColor = Color.FromArgb(130, 145, 170);
+            label13.Location = new Point(661, 438);
+            label13.Name = "label13";
+            label13.Size = new Size(135, 15);
+            label13.TabIndex = 25;
+            label13.Text = "Don't have an account?";
+            // 
             // usLogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(15, 17, 23);
             BorderStyle = BorderStyle.FixedSingle;
+            Controls.Add(label13);
+            Controls.Add(label12);
+            Controls.Add(label11);
+            Controls.Add(label10);
+            Controls.Add(label9);
             Controls.Add(button3);
-            Controls.Add(textBox16);
             Controls.Add(button1);
             Controls.Add(textBox15);
             Controls.Add(textBox14);
-            Controls.Add(textBox13);
-            Controls.Add(textBox12);
-            Controls.Add(textBox11);
-            Controls.Add(textBox10);
             Controls.Add(panel1);
             Name = "usLogin";
             Size = new Size(1162, 688);
@@ -345,27 +320,26 @@
         #endregion
 
         private Panel panel1;
-        private TextBox textBox1;
-        private PictureBox pictureBox1;
         private ContextMenuStrip contextMenuStrip1;
-        private TextBox textBox2;
-        private TextBox textBox4;
-        private TextBox textBox3;
-        private TextBox textBox6;
-        private TextBox textBox5;
-        private TextBox textBox7;
-        private TextBox textBox8;
-        private TextBox textBox9;
-        private TextBox textBox10;
-        private TextBox textBox11;
-        private TextBox textBox12;
-        private TextBox textBox13;
         private ContextMenuStrip contextMenuStrip2;
         private TextBox textBox14;
         private TextBox textBox15;
         private Button button1;
         private ContextMenuStrip contextMenuStrip3;
-        private TextBox textBox16;
         private Button button3;
+        private PictureBox pictureBox1;
+        private Label label4;
+        private Label label3;
+        private Label label2;
+        private Label label1;
+        private Label label6;
+        private Label label5;
+        private Label label8;
+        private Label label7;
+        private Label label9;
+        private Label label10;
+        private Label label11;
+        private Label label12;
+        private Label label13;
     }
 }

@@ -38,9 +38,9 @@
             button3 = new Button();
             dashboard = new Button();
             panel6 = new Panel();
+            label2 = new Label();
+            label1 = new Label();
             pictureBox1 = new PictureBox();
-            textBox7 = new TextBox();
-            textBox8 = new TextBox();
             rightsidepanel = new Panel();
             LeftSidePanel.SuspendLayout();
             panel6.SuspendLayout();
@@ -183,13 +183,34 @@
             panel6.BackColor = Color.Transparent;
             panel6.BackgroundImageLayout = ImageLayout.None;
             panel6.BorderStyle = BorderStyle.FixedSingle;
+            panel6.Controls.Add(label2);
+            panel6.Controls.Add(label1);
             panel6.Controls.Add(pictureBox1);
-            panel6.Controls.Add(textBox7);
-            panel6.Controls.Add(textBox8);
             panel6.Location = new Point(-10, -4);
             panel6.Name = "panel6";
             panel6.Size = new Size(192, 77);
             panel6.TabIndex = 5;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Microsoft Sans Serif", 9F);
+            label2.ForeColor = Color.Gray;
+            label2.Location = new Point(75, 36);
+            label2.Name = "label2";
+            label2.Size = new Size(56, 15);
+            label2.TabIndex = 14;
+            label2.Text = "Personal";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Microsoft Sans Serif", 11F);
+            label1.Location = new Point(75, 18);
+            label1.Name = "label1";
+            label1.Size = new Size(52, 18);
+            label1.TabIndex = 0;
+            label1.Text = "Name ";
             // 
             // pictureBox1
             // 
@@ -198,32 +219,6 @@
             pictureBox1.Size = new Size(55, 53);
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
-            // 
-            // textBox7
-            // 
-            textBox7.BackColor = Color.FromArgb(19, 22, 31);
-            textBox7.BorderStyle = BorderStyle.None;
-            textBox7.Font = new Font("Microsoft Sans Serif", 9F);
-            textBox7.ForeColor = Color.Gray;
-            textBox7.Location = new Point(75, 39);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(129, 14);
-            textBox7.TabIndex = 4;
-            textBox7.Text = "Personal";
-            textBox7.TextChanged += textBox7_TextChanged;
-            // 
-            // textBox8
-            // 
-            textBox8.BackColor = Color.FromArgb(19, 22, 31);
-            textBox8.BorderStyle = BorderStyle.None;
-            textBox8.Font = new Font("Microsoft Sans Serif", 11F);
-            textBox8.ForeColor = Color.White;
-            textBox8.Location = new Point(74, 16);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(104, 17);
-            textBox8.TabIndex = 3;
-            textBox8.Text = "Name ";
-            textBox8.TextChanged += textBox8_TextChanged;
             // 
             // rightsidepanel
             // 
@@ -243,7 +238,7 @@
             Controls.Add(rightsidepanel);
             Controls.Add(LeftSidePanel);
             Name = "Form1";
-            Text = "Background";
+            Text = "`";
             Load += Form1_Load;
             LeftSidePanel.ResumeLayout(false);
             panel6.ResumeLayout(false);
@@ -254,8 +249,6 @@
 
         #endregion
         private Panel LeftSidePanel;
-        private TextBox textBox8;
-        private TextBox textBox7;
         private PictureBox pictureBox1;
         private Panel panel6;
         private Button dashboard;
@@ -267,5 +260,7 @@
         private Button button8;
         private Button button7;
         private Panel rightsidepanel;
+        private Label label1;
+        private Label label2;
     }
 }

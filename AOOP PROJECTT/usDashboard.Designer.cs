@@ -29,25 +29,25 @@
         private void InitializeComponent()
         {
             panel5 = new Panel();
-            textBox6 = new TextBox();
+            label9 = new Label();
             panel4 = new Panel();
-            textBox5 = new TextBox();
+            label8 = new Label();
             panel3 = new Panel();
+            label3 = new Label();
+            label2 = new Label();
+            label1 = new Label();
             textBox8 = new TextBox();
-            textBox7 = new TextBox();
-            textBox2 = new TextBox();
             panel2 = new Panel();
-            progressBar1 = new ProgressBar();
-            textBox10 = new TextBox();
-            textBox9 = new TextBox();
-            textBox4 = new TextBox();
-            textBox3 = new TextBox();
+            label7 = new Label();
+            label6 = new Label();
+            label5 = new Label();
+            label4 = new Label();
             panel1 = new Panel();
             panel6 = new Panel();
             panel7 = new Panel();
+            label10 = new Label();
             button1 = new Button();
             myDateTextBox = new TextBox();
-            textBox1 = new TextBox();
             panel5.SuspendLayout();
             panel4.SuspendLayout();
             panel3.SuspendLayout();
@@ -61,59 +61,90 @@
             // 
             panel5.BackColor = Color.FromArgb(24, 28, 38);
             panel5.BorderStyle = BorderStyle.FixedSingle;
-            panel5.Controls.Add(textBox6);
+            panel5.Controls.Add(label9);
             panel5.Location = new Point(491, 359);
             panel5.Name = "panel5";
             panel5.Size = new Size(446, 254);
             panel5.TabIndex = 3;
             panel5.Paint += panel5_Paint;
             // 
-            // textBox6
+            // label9
             // 
-            textBox6.BackColor = Color.FromArgb(24, 28, 38);
-            textBox6.BorderStyle = BorderStyle.None;
-            textBox6.Font = new Font("Segoe UI", 10F);
-            textBox6.ForeColor = Color.FromArgb(130, 145, 170);
-            textBox6.Location = new Point(19, 23);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(129, 18);
-            textBox6.TabIndex = 7;
-            textBox6.Text = "SAVINGS GOALS";
+            label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI", 9F);
+            label9.ForeColor = Color.FromArgb(130, 145, 170);
+            label9.Location = new Point(14, 23);
+            label9.Name = "label9";
+            label9.Size = new Size(94, 15);
+            label9.TabIndex = 10;
+            label9.Text = "BUDGET STATUS";
             // 
             // panel4
             // 
             panel4.BackColor = Color.FromArgb(24, 28, 38);
             panel4.BorderStyle = BorderStyle.FixedSingle;
-            panel4.Controls.Add(textBox5);
+            panel4.Controls.Add(label8);
             panel4.Location = new Point(25, 359);
             panel4.Name = "panel4";
             panel4.Size = new Size(446, 254);
             panel4.TabIndex = 4;
             // 
-            // textBox5
+            // label8
             // 
-            textBox5.BackColor = Color.FromArgb(24, 28, 38);
-            textBox5.BorderStyle = BorderStyle.None;
-            textBox5.Font = new Font("Segoe UI", 10F);
-            textBox5.ForeColor = Color.FromArgb(130, 145, 170);
-            textBox5.Location = new Point(24, 23);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(129, 18);
-            textBox5.TabIndex = 6;
-            textBox5.Text = "BUDGET STATUS";
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 9F);
+            label8.ForeColor = Color.FromArgb(130, 145, 170);
+            label8.Location = new Point(24, 23);
+            label8.Name = "label8";
+            label8.Size = new Size(94, 15);
+            label8.TabIndex = 9;
+            label8.Text = "BUDGET STATUS";
             // 
             // panel3
             // 
             panel3.BackColor = Color.FromArgb(24, 28, 38);
             panel3.BorderStyle = BorderStyle.FixedSingle;
+            panel3.Controls.Add(label3);
+            panel3.Controls.Add(label2);
+            panel3.Controls.Add(label1);
             panel3.Controls.Add(textBox8);
-            panel3.Controls.Add(textBox7);
-            panel3.Controls.Add(textBox2);
             panel3.Location = new Point(25, 82);
             panel3.Name = "panel3";
             panel3.Size = new Size(446, 254);
             panel3.TabIndex = 5;
             panel3.Paint += panel3_Paint;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 9F);
+            label3.ForeColor = Color.FromArgb(79, 255, 176);
+            label3.Location = new Point(24, 101);
+            label3.Name = "label3";
+            label3.Size = new Size(115, 15);
+            label3.TabIndex = 8;
+            label3.Text = "+12% up this month";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 30F, FontStyle.Bold);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(19, 42);
+            label2.Name = "label2";
+            label2.Size = new Size(151, 54);
+            label2.TabIndex = 7;
+            label2.Text = "P 4000";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.ForeColor = Color.FromArgb(130, 145, 170);
+            label1.Location = new Point(24, 22);
+            label1.Name = "label1";
+            label1.Size = new Size(96, 15);
+            label1.TabIndex = 6;
+            label1.Text = "TOTAL BALANCE";
             // 
             // textBox8
             // 
@@ -125,103 +156,65 @@
             textBox8.Name = "textBox8";
             textBox8.Size = new Size(129, 18);
             textBox8.TabIndex = 5;
-            textBox8.Text = "+12% up this month";
             textBox8.TextChanged += textBox8_TextChanged;
-            // 
-            // textBox7
-            // 
-            textBox7.BackColor = Color.FromArgb(24, 28, 38);
-            textBox7.BorderStyle = BorderStyle.None;
-            textBox7.Font = new Font("Segoe UI", 30F, FontStyle.Bold);
-            textBox7.ForeColor = Color.White;
-            textBox7.Location = new Point(24, 44);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(333, 54);
-            textBox7.TabIndex = 4;
-            textBox7.Text = "P 4000";
-            // 
-            // textBox2
-            // 
-            textBox2.BackColor = Color.FromArgb(24, 28, 38);
-            textBox2.BorderStyle = BorderStyle.None;
-            textBox2.Font = new Font("Segoe UI", 10F);
-            textBox2.ForeColor = Color.FromArgb(130, 145, 170);
-            textBox2.Location = new Point(24, 22);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(129, 18);
-            textBox2.TabIndex = 3;
-            textBox2.Text = "TOTAL BALANCE";
-            textBox2.TextChanged += textBox2_TextChanged;
             // 
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(24, 28, 38);
             panel2.BorderStyle = BorderStyle.FixedSingle;
-            panel2.Controls.Add(progressBar1);
-            panel2.Controls.Add(textBox10);
-            panel2.Controls.Add(textBox9);
-            panel2.Controls.Add(textBox4);
-            panel2.Controls.Add(textBox3);
+            panel2.Controls.Add(label7);
+            panel2.Controls.Add(label6);
+            panel2.Controls.Add(label5);
+            panel2.Controls.Add(label4);
             panel2.Location = new Point(491, 82);
             panel2.Name = "panel2";
             panel2.Size = new Size(446, 254);
             panel2.TabIndex = 2;
             // 
-            // progressBar1
+            // label7
             // 
-            progressBar1.Location = new Point(19, 149);
-            progressBar1.Name = "progressBar1";
-            progressBar1.Size = new Size(405, 13);
-            progressBar1.TabIndex = 7;
-            progressBar1.Value = 10;
+            label7.AutoSize = true;
+            label7.Font = new Font("Microsoft Sans Serif", 8F);
+            label7.ForeColor = Color.FromArgb(130, 145, 170);
+            label7.Location = new Point(19, 130);
+            label7.Name = "label7";
+            label7.Size = new Size(93, 13);
+            label7.TabIndex = 9;
+            label7.Text = "% of income spent";
+            label7.Click += label7_Click;
             // 
-            // textBox10
+            // label6
             // 
-            textBox10.BackColor = Color.FromArgb(24, 28, 38);
-            textBox10.BorderStyle = BorderStyle.None;
-            textBox10.Font = new Font("Segoe UI", 10F);
-            textBox10.ForeColor = Color.FromArgb(255, 107, 107);
-            textBox10.Location = new Point(19, 96);
-            textBox10.Name = "textBox10";
-            textBox10.Size = new Size(129, 18);
-            textBox10.TabIndex = 6;
-            textBox10.Text = "+5% vs last month";
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 9F);
+            label6.ForeColor = Color.FromArgb(255, 107, 107);
+            label6.Location = new Point(19, 101);
+            label6.Name = "label6";
+            label6.Size = new Size(115, 15);
+            label6.TabIndex = 9;
+            label6.Text = "+12% up this month";
+            label6.Click += label6_Click;
             // 
-            // textBox9
+            // label5
             // 
-            textBox9.BackColor = Color.FromArgb(24, 28, 38);
-            textBox9.BorderStyle = BorderStyle.None;
-            textBox9.Font = new Font("Segoe UI", 30F, FontStyle.Bold);
-            textBox9.ForeColor = Color.White;
-            textBox9.Location = new Point(19, 44);
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(333, 54);
-            textBox9.TabIndex = 6;
-            textBox9.Text = "P 4000";
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 30F, FontStyle.Bold);
+            label5.ForeColor = Color.White;
+            label5.Location = new Point(14, 36);
+            label5.Name = "label5";
+            label5.Size = new Size(151, 54);
+            label5.TabIndex = 9;
+            label5.Text = "P 4000";
             // 
-            // textBox4
+            // label4
             // 
-            textBox4.BackColor = Color.FromArgb(24, 28, 38);
-            textBox4.BorderStyle = BorderStyle.None;
-            textBox4.Font = new Font("Microsoft Sans Serif", 8F);
-            textBox4.ForeColor = Color.FromArgb(130, 145, 170);
-            textBox4.Location = new Point(19, 130);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(129, 13);
-            textBox4.TabIndex = 5;
-            textBox4.Text = "% of income spent";
-            // 
-            // textBox3
-            // 
-            textBox3.BackColor = Color.FromArgb(24, 28, 38);
-            textBox3.BorderStyle = BorderStyle.None;
-            textBox3.Font = new Font("Segoe UI", 10F);
-            textBox3.ForeColor = Color.FromArgb(130, 145, 170);
-            textBox3.Location = new Point(19, 22);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(129, 18);
-            textBox3.TabIndex = 4;
-            textBox3.Text = "MONTHLY EXPENSES";
+            label4.AutoSize = true;
+            label4.ForeColor = Color.FromArgb(130, 145, 170);
+            label4.Location = new Point(19, 22);
+            label4.Name = "label4";
+            label4.Size = new Size(120, 15);
+            label4.TabIndex = 9;
+            label4.Text = "MONTHLY EXPENSES";
             // 
             // panel1
             // 
@@ -249,14 +242,25 @@
             // 
             // panel7
             // 
+            panel7.Controls.Add(label10);
             panel7.Controls.Add(button1);
             panel7.Controls.Add(myDateTextBox);
-            panel7.Controls.Add(textBox1);
             panel7.Location = new Point(0, 0);
             panel7.Name = "panel7";
             panel7.Size = new Size(962, 54);
             panel7.TabIndex = 3;
             panel7.Paint += panel7_Paint;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("SimSun", 15F);
+            label10.ForeColor = Color.White;
+            label10.Location = new Point(30, 19);
+            label10.Name = "label10";
+            label10.Size = new Size(99, 20);
+            label10.TabIndex = 4;
+            label10.Text = "Dashboard";
             // 
             // button1
             // 
@@ -285,18 +289,6 @@
             myDateTextBox.Text = "Date";
             myDateTextBox.TextChanged += myDateTextBox_TextChanged;
             // 
-            // textBox1
-            // 
-            textBox1.BackColor = Color.FromArgb(15, 17, 23);
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Font = new Font("SimSun", 15F);
-            textBox1.ForeColor = Color.White;
-            textBox1.Location = new Point(31, 16);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(129, 23);
-            textBox1.TabIndex = 1;
-            textBox1.Text = "Dashboard";
-            // 
             // usDashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -322,24 +314,24 @@
         #endregion
 
         private Panel panel5;
-        private TextBox textBox6;
         private Panel panel4;
-        private TextBox textBox5;
         private Panel panel3;
-        private TextBox textBox2;
         private Panel panel2;
-        private TextBox textBox4;
-        private TextBox textBox3;
         private Panel panel1;
         private Panel panel6;
         private Panel panel7;
         private Button button1;
         private TextBox myDateTextBox;
-        private TextBox textBox1;
-        private TextBox textBox7;
         private TextBox textBox8;
-        private ProgressBar progressBar1;
-        private TextBox textBox10;
-        private TextBox textBox9;
+        private Label label3;
+        private Label label2;
+        private Label label1;
+        private Label label4;
+        private Label label7;
+        private Label label6;
+        private Label label5;
+        private Label label9;
+        private Label label8;
+        private Label label10;
     }
 }

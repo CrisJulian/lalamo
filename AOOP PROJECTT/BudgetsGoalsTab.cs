@@ -23,8 +23,8 @@ namespace CommonCents
         private Panel pnlBudgetGrid;
         private Panel pnlGoalGrid;
 
-        private static readonly Color BgDark   = Color.FromArgb(22, 27, 38);
-        private static readonly Color CardBg   = Color.FromArgb(30, 36, 52);
+        private static readonly Color BgDark   = Color.FromArgb(15, 17, 23);
+        private static readonly Color CardBg   = Color.FromArgb(15,17,23);
         private static readonly Color Accent   = Color.FromArgb(230, 170, 0);
         private static readonly Color SubText  = Color.FromArgb(130, 145, 170);
         private static readonly Color GreenAmt = Color.FromArgb(80, 220, 120);
@@ -56,7 +56,8 @@ namespace CommonCents
                 Dock       = DockStyle.Fill,
                 AutoScroll = true,
                 BackColor  = BgDark,
-                Padding    = new Padding(18)
+                Padding    = new Padding(18),
+                AutoScrollMargin = new Size(0, 10)
             };
             Controls.Add(scroll);
 
@@ -93,15 +94,24 @@ namespace CommonCents
                 "+ Add Budget", BtnAddBudget_Click, out pnlBudgetGrid);
             scroll.Controls.Add(budgetSection);
 
+            var spacer = new Panel
+            {
+                Height = 24,
+                Dock = DockStyle.Top,
+                BackColor = BgDark
+            };
+            scroll.Controls.Add(spacer);
+
             var goalsSection = BuildSection(
                 "SAVINGS GOALS",
                 "+ Add Goal", BtnAddGoal_Click, out pnlGoalGrid);
-            goalsSection.Margin = new Padding(0, 14, 0, 0);
+            goalsSection.Margin = new Padding(0, 24, 0, 0);
             scroll.Controls.Add(goalsSection);
 
             scroll.Controls.SetChildIndex(goalsSection,  0);
-            scroll.Controls.SetChildIndex(budgetSection, 1);
-            scroll.Controls.SetChildIndex(topBar,        2);
+            scroll.Controls.SetChildIndex(spacer, 1);
+            scroll.Controls.SetChildIndex(budgetSection, 2);
+            scroll.Controls.SetChildIndex(topBar,        3);
         }
 
         private Panel BuildSection(string title, string btnLabel,
@@ -136,8 +146,8 @@ namespace CommonCents
                 Dock      = DockStyle.None,
                 BackColor = Color.Transparent,
                 Height    = 0,
-                Location  = new Point(0, 44),
-                Padding   = new Padding(0, 6, 0, 6)
+                Location  = new Point(16, 48),
+                Padding   = new Padding(8, 6, 8, 6)
             };
             section.Controls.Add(innerGrid);
 
@@ -206,11 +216,13 @@ namespace CommonCents
                 Padding   = new Padding(16, 12, 16, 12),
                 Cursor    = Cursors.Hand
             };
-            card.Paint += (s, e) => DrawRoundedBorder(e.Graphics, card);
-            card.Click += (s, e) => OpenAddSpending(budget);
+            card.Resize += (s, e) => card.Region = Region.FromHrgn(
+                CreateRoundRectRgn(0, 0, card.Width, card.Height, 10, 10));
+            card.Paint += (s, e) => DrawRoundedBorder(e.Graphics, card);  // ← ADD
+            card.Click += (s, e) => OpenAddSpending(budget);               // ← ADD
 
             var dot = MakeDot(budget.CategoryColor);
-            dot.Location = new Point(16, 14);
+            dot.Location = new Point(16, 23);
             card.Controls.Add(dot);
 
             card.Controls.Add(new Label
@@ -219,7 +231,7 @@ namespace CommonCents
                 Font      = new Font("Segoe UI", 10f, FontStyle.Bold),
                 ForeColor = Color.White,
                 AutoSize  = true,
-                Location  = new Point(34, 13)
+                Location  = new Point(34, 20)
             });
 
             var lblPercent = new Label
@@ -231,7 +243,7 @@ namespace CommonCents
             };
             card.Controls.Add(lblPercent);
             card.Resize += (s, e) =>
-                lblPercent.Location = new Point(card.Width - lblPercent.Width - 16, 14);
+                lblPercent.Location = new Point(card.Width - lblPercent.Width - 16, 18);
 
             var track = MakeTrack(card, 58);
             card.Resize += (s, e) =>
@@ -255,7 +267,7 @@ namespace CommonCents
                 Font      = new Font("Segoe UI", 7.5f),
                 ForeColor = SubText,
                 AutoSize  = true,
-                Location  = new Point(16, 96)
+                Location  = new Point(16, 100)
             });
 
             var lblRem = new Label
@@ -290,11 +302,13 @@ namespace CommonCents
         {
             var card = new Panel
             {
-                Dock      = DockStyle.Fill,
+                Dock = DockStyle.Fill,
                 BackColor = CardBg,
-                Padding   = new Padding(16, 12, 16, 12),
-                Cursor    = Cursors.Hand
+                Padding = new Padding(16, 12, 16, 12),
+                Cursor = Cursors.Hand
             };
+            card.Resize += (s, e) => card.Region = Region.FromHrgn(
+                CreateRoundRectRgn(0, 0, card.Width, card.Height, 10, 10));
             card.Paint += (s, e) => DrawRoundedBorder(e.Graphics, card);
             card.Click += (s, e) => OpenAddContribution(goal);
 
@@ -336,10 +350,10 @@ namespace CommonCents
                 Font      = new Font("Segoe UI", 7.5f),
                 ForeColor = SubText,
                 AutoSize  = true,
-                Location  = new Point(16, 56)
+                Location  = new Point(16, 70)
             });
 
-            var track = MakeTrack(card, 78);
+            var track = MakeTrack(card, 93);
             card.Resize += (s, e) =>
             {
                 track.Width = card.Width - 32;
@@ -353,7 +367,7 @@ namespace CommonCents
                 Font      = new Font("Segoe UI", 8f),
                 ForeColor = goal.IsComplete ? GreenAmt : SubText,
                 AutoSize  = true,
-                Location  = new Point(16, 96)
+                Location  = new Point(16, 107)
             });
 
             new ToolTip().SetToolTip(card, "Click to add contribution");
@@ -523,5 +537,11 @@ namespace CommonCents
             path.CloseFigure();
             return path;
         }
+
+        [System.Runtime.InteropServices.DllImport("Gdi32.dll")]
+        private static extern IntPtr CreateRoundRectRgn(
+           int nLeftRect, int nTopRect,
+           int nRightRect, int nBottomRect,
+           int nWidthEllipse, int nHeightEllipse);
     }
 }
