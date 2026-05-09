@@ -71,6 +71,7 @@ namespace CommonCents
             var btnAddTx = MakeYellowButton("+ Add Transaction", 148);
             btnAddTx.BackColor = Color.FromArgb(245, 166, 35);
             btnAddTx.ForeColor = Color.FromArgb(20, 20, 20);
+            btnAddTx.Font = new Font("Segoe UI", 10f, FontStyle.Bold);
             btnAddTx.FlatAppearance.BorderSize = 0;
             btnAddTx.FlatAppearance.BorderColor = Color.FromArgb(245, 166, 35);
             btnAddTx.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 200, 30);
@@ -519,7 +520,7 @@ namespace CommonCents
                 FlatStyle = FlatStyle.Flat,
                 Height    = 30,
                 Width     = width,
-                Font      = new Font("Segoe UI", 10f, FontStyle.Bold),
+                Font      = new Font("Segoe UI", 10f),
                 Cursor    = Cursors.Hand
             };
             b.FlatAppearance.BorderColor = Color.FromArgb(230, 170, 0);        // 👈 yellow border

@@ -34,19 +34,19 @@
             label8 = new Label();
             panel3 = new Panel();
             label3 = new Label();
-            label2 = new Label();
             label1 = new Label();
             textBox8 = new TextBox();
             panel2 = new Panel();
             label7 = new Label();
             label6 = new Label();
-            label5 = new Label();
             label4 = new Label();
+            label5 = new Label();
             panel1 = new Panel();
             panel7 = new Panel();
             label10 = new Label();
             button1 = new Button();
             myDateTextBox = new TextBox();
+            label2 = new Label();
             panel5.SuspendLayout();
             panel4.SuspendLayout();
             panel3.SuspendLayout();
@@ -120,17 +120,6 @@
             label3.TabIndex = 8;
             label3.Text = "+12% up this month";
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 30F, FontStyle.Bold);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(19, 42);
-            label2.Name = "label2";
-            label2.Size = new Size(151, 54);
-            label2.TabIndex = 7;
-            label2.Text = "P 4000";
-            // 
             // label1
             // 
             label1.AutoSize = true;
@@ -188,6 +177,16 @@
             label6.Text = "+12% up this month";
             label6.Click += label6_Click;
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.ForeColor = Color.FromArgb(130, 145, 170);
+            label4.Location = new Point(19, 22);
+            label4.Name = "label4";
+            label4.Size = new Size(120, 15);
+            label4.TabIndex = 9;
+            label4.Text = "MONTHLY EXPENSES";
+            // 
             // label5
             // 
             label5.AutoSize = true;
@@ -198,16 +197,6 @@
             label5.Size = new Size(151, 54);
             label5.TabIndex = 9;
             label5.Text = "P 4000";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.ForeColor = Color.FromArgb(130, 145, 170);
-            label4.Location = new Point(19, 22);
-            label4.Name = "label4";
-            label4.Size = new Size(120, 15);
-            label4.TabIndex = 9;
-            label4.Text = "MONTHLY EXPENSES";
             // 
             // panel1
             // 
@@ -274,6 +263,17 @@
             myDateTextBox.Text = "Date";
             myDateTextBox.TextChanged += myDateTextBox_TextChanged;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 30F, FontStyle.Bold);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(19, 42);
+            label2.Name = "label2";
+            label2.Size = new Size(0, 54);
+            label2.TabIndex = 7;
+            label2.Click += label2_Click;
+            // 
             // usDashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -307,7 +307,6 @@
         private TextBox myDateTextBox;
         private TextBox textBox8;
         private Label label3;
-        private Label label2;
         private Label label1;
         private Label label4;
         private Label label7;
@@ -316,5 +315,6 @@
         private Label label9;
         private Label label8;
         private Label label10;
+        private Label label2;
     }
 }

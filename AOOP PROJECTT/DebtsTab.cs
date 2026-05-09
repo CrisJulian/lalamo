@@ -69,6 +69,7 @@ namespace CommonCents
             var btnAddTx = MakeYellowButton("+ Add Transaction", 140);
             btnAddTx.Height = 32;
             btnAddTx.Click += (s, e) => Form1.OpenAddTransaction(ParentForm, null);
+            btnAddTx.Font = new Font("Segoe UI", 10f, FontStyle.Bold);
             topBar.Controls.Add(lblTitle);
             topBar.Controls.Add(lblDate);
             topBar.Controls.Add(btnAddTx);
@@ -124,27 +125,26 @@ namespace CommonCents
             outer.Controls.Add(summaryRow);
 
             // ── Active debts bar ─────────────────────────────────────
-            var activeBar = new Panel { Height = 40, Dock = DockStyle.Top, BackColor = BgDark };
+            var activeBar = new Panel { Height = 60, Dock = DockStyle.Top, BackColor = BgDark };
             var lblActive = new Label
             {
                 Text = "ACTIVE DEBTS",
                 Font = new Font("Segoe UI", 8f, FontStyle.Bold),
                 ForeColor = SubText,
                 AutoSize = true,
-                Location = new Point(0, 12)
+                Location = new Point(0, 35)
             };
             var btnAddDebt = MakeYellowButton("+ Add Debt", 110);
             btnAddDebt.Click += BtnAddDebt_Click;
             activeBar.Controls.Add(lblActive);
             activeBar.Controls.Add(btnAddDebt);
             activeBar.Resize += (s, e) =>
-                btnAddDebt.Location = new Point(activeBar.Width - btnAddDebt.Width - 2, 6);
+                btnAddDebt.Location = new Point(activeBar.Width - btnAddDebt.Width - 2, 20);
             outer.Controls.Add(activeBar);
 
             pnlDebtList = new Panel
             {
                 Dock = DockStyle.Top,
-                AutoSize = true,
                 BackColor = BgDark,
                 Padding = new Padding(0, 4, 0, 0)
             };
@@ -181,9 +181,22 @@ namespace CommonCents
                 cards.Add(BuildDebtCard(debt));
 
             for (int i = cards.Count - 1; i >= 0; i--)
+            {
+                // Add a spacer before each card (except the last one added, which is the first card)
+                if (i < cards.Count - 1)
+                {
+                    var spacer = new Panel
+                    {
+                        Height = 12,
+                        Dock = DockStyle.Top,
+                        BackColor = BgDark
+                    };
+                    pnlDebtList.Controls.Add(spacer);
+                }
                 pnlDebtList.Controls.Add(cards[i]);
+            }
 
-            pnlDebtList.Height = cards.Count * 160 + 10;
+            pnlDebtList.Height = cards.Count * 170 + (cards.Count - 1) * 12 + 10;
         }
 
         // ── DEBT CARD (unchanged visually) ─────────────────────────────
@@ -194,7 +207,7 @@ namespace CommonCents
                 Height    = 170,
                 Dock      = DockStyle.Top,
                 BackColor = CardBg,
-                Margin    = new Padding(0, 0, 0, 10),
+                Margin    = new Padding(0, 0, 0, 20),
                 Padding   = new Padding(16, 12, 16, 12)
             };
             card.Paint += (s, e) =>
@@ -231,10 +244,22 @@ namespace CommonCents
                 Font      = new Font("Segoe UI", 8.5f),
                 ForeColor = SubText,
                 AutoSize  = true,
-                Location  = new Point(63, 34)
+                Location  = new Point(63, 36)
             });
 
-            var btnLog = MakeYellowButton("Log Payment", 108);
+            var btnLog = new Button
+            {
+                Text = "Log Payment",
+                Height = 32,
+                Width = 108,
+                BackColor = Color.Transparent,
+                ForeColor = Color.FromArgb(230, 170, 0),
+                FlatStyle = FlatStyle.Flat,
+                Cursor = Cursors.Hand
+            };
+            btnLog.FlatAppearance.BorderColor = Color.FromArgb(230, 170, 0);
+            btnLog.FlatAppearance.BorderSize = 1;
+            btnLog.FlatAppearance.MouseOverBackColor = Color.FromArgb(30, 230, 170, 0);
             btnLog.Click += (s, e) => OpenLogPayment(debt);
             card.Controls.Add(btnLog);
             card.Resize += (s, e) => btnLog.Location = new Point(card.Width - 126, 12);

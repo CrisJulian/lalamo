@@ -111,7 +111,7 @@
             cmbFilterType.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             cmbFilterType.Font = new Font("Segoe UI", 9F);
             cmbFilterType.FormattingEnabled = true;
-            cmbFilterType.Items.AddRange(new object[] { "Food", "Transport", "Entertainment", "Utilities", "Healthcare", "Shopping", "Health", "Software", "Income", "Other" });
+            cmbFilterType.Items.AddRange(new object[] { "All", "Food", "Transport", "Entertainment", "Utilities", "Healthcare", "Shopping", "Health", "Software", "Income", "Other" });
             cmbFilterType.Location = new Point(535, 13);
             cmbFilterType.Name = "cmbFilterType";
             cmbFilterType.Size = new Size(121, 23);

@@ -98,10 +98,10 @@ namespace CommonCents
                 Height = 44
             };
 
-            var btnCancel = MakeBtn("Cancel", Color.FromArgb(80, 88, 108));
+            var btnCancel = MakeBtn("Cancel");
             btnCancel.Click += (s, e) => { DialogResult = DialogResult.Cancel; Close(); };
 
-            var btnOk = MakeBtn("Log Payment", Color.FromArgb(230, 170, 0));
+            var btnOk = MakeBtn("Log Payment", primary: true);
             btnOk.Click += (s, e) =>
             {
                 if (PaymentAmount <= 0)
@@ -121,19 +121,24 @@ namespace CommonCents
             Controls.Add(panel);
         }
 
-        private Button MakeBtn(string text, Color bg)
+        private Button MakeBtn(string text, bool primary = false)
         {
             var b = new Button
             {
                 Text = text,
-                BackColor = bg,
-                ForeColor = Color.White,
-                FlatStyle = FlatStyle.Flat,
                 Height = 36,
-                Width = 120,
-                Margin = new Padding(6, 4, 0, 0)
+                Width = 110,
+                FlatStyle = FlatStyle.Flat,
+                Margin = new Padding(6, 4, 0, 0),
+                Cursor = Cursors.Hand,
+                BackColor = primary ? Color.Transparent : Color.FromArgb(80, 88, 108),
+                ForeColor = primary ? Color.FromArgb(230, 170, 0) : Color.White
             };
-            b.FlatAppearance.BorderSize = 0;
+            b.FlatAppearance.BorderSize = primary ? 1 : 0;
+            b.FlatAppearance.BorderColor = Color.FromArgb(230, 170, 0);
+            b.FlatAppearance.MouseOverBackColor = primary
+                ? Color.FromArgb(30, 230, 170, 0)
+                : Color.FromArgb(100, 108, 128);
             return b;
         }
     }
