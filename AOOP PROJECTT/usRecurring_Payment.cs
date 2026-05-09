@@ -123,22 +123,6 @@ namespace AOOP_PROJECTT
         {
             Form1.OpenAddTransaction(ParentForm, null);
         }
-
-        private void panel7_Paint(object sender, PaintEventArgs e)
-        {
-            using var pen = new Pen(Color.FromArgb(50, 60, 80), 1f);
-            e.Graphics.DrawLine(pen, 0, panel7.Height - 1,
-                                panel7.Width, panel7.Height - 1);
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void pnlRecurringList_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+        // tite
     }
 }
