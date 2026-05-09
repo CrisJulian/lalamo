@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
             button1 = new Button();
             myDateTextBox = new TextBox();
             textBox1 = new TextBox();
@@ -42,19 +41,11 @@
             lblName = new Label();
             lblAmount = new Label();
             pnlRecurringList = new FlowLayoutPanel();
-            panel1.SuspendLayout();
+            panel7 = new Panel();
+            label5 = new Label();
             panel3.SuspendLayout();
+            panel7.SuspendLayout();
             SuspendLayout();
-            // 
-            // panel1
-            // 
-            panel1.Controls.Add(button1);
-            panel1.Controls.Add(myDateTextBox);
-            panel1.Controls.Add(textBox1);
-            panel1.Location = new Point(0, 3);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(962, 54);
-            panel1.TabIndex = 0;
             // 
             // button1
             // 
@@ -62,7 +53,7 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.Black;
-            button1.Location = new Point(765, 10);
+            button1.Location = new Point(762, 10);
             button1.Name = "button1";
             button1.Size = new Size(171, 34);
             button1.TabIndex = 3;
@@ -76,9 +67,9 @@
             myDateTextBox.BorderStyle = BorderStyle.None;
             myDateTextBox.Font = new Font("Microsoft Sans Serif", 10F);
             myDateTextBox.ForeColor = Color.FromArgb(130, 145, 170);
-            myDateTextBox.Location = new Point(639, 20);
+            myDateTextBox.Location = new Point(634, 20);
             myDateTextBox.Name = "myDateTextBox";
-            myDateTextBox.Size = new Size(297, 16);
+            myDateTextBox.Size = new Size(122, 16);
             myDateTextBox.TabIndex = 5;
             myDateTextBox.Text = "Date";
             // 
@@ -88,18 +79,18 @@
             textBox1.BorderStyle = BorderStyle.None;
             textBox1.Font = new Font("SimSun", 15F);
             textBox1.ForeColor = Color.White;
-            textBox1.Location = new Point(27, 16);
+            textBox1.Location = new Point(24, 16);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(129, 23);
+            textBox1.Size = new Size(252, 23);
             textBox1.TabIndex = 4;
-            textBox1.Text = "Recurring";
+            textBox1.Text = "Recurring Payment";
             textBox1.TextChanged += textBox1_TextChanged;
             // 
             // button2
             // 
             button2.BackColor = Color.FromArgb(245, 166, 35);
             button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            button2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button2.ForeColor = Color.Black;
             button2.Location = new Point(782, 100);
             button2.Name = "button2";
@@ -146,6 +137,7 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(903, 44);
             panel3.TabIndex = 0;
+            panel3.Paint += panel3_Paint;
             // 
             // lblFrequency
             // 
@@ -219,32 +211,54 @@
             pnlRecurringList.Size = new Size(903, 396);
             pnlRecurringList.TabIndex = 7;
             pnlRecurringList.WrapContents = false;
+            pnlRecurringList.Paint += pnlRecurringList_Paint;
+            // 
+            // panel7
+            // 
+            panel7.Controls.Add(button1);
+            panel7.Controls.Add(myDateTextBox);
+            panel7.Controls.Add(textBox1);
+            panel7.Controls.Add(label5);
+            panel7.Location = new Point(3, 3);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(957, 55);
+            panel7.TabIndex = 8;
+            panel7.Paint += panel7_Paint;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 30F, FontStyle.Bold);
+            label5.ForeColor = Color.White;
+            label5.Location = new Point(505, 104);
+            label5.Name = "label5";
+            label5.Size = new Size(151, 54);
+            label5.TabIndex = 9;
+            label5.Text = "P 4000";
             // 
             // usRecurring_Payment
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(15, 17, 23);
+            Controls.Add(panel7);
             Controls.Add(pnlRecurringList);
             Controls.Add(panel3);
             Controls.Add(textBox2);
             Controls.Add(button2);
             Controls.Add(lblMonthlyTotal);
-            Controls.Add(panel1);
             Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Name = "usRecurring_Payment";
             Size = new Size(963, 649);
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
+            panel7.ResumeLayout(false);
+            panel7.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private Panel panel1;
         private Button button1;
         private TextBox myDateTextBox;
         private TextBox textBox1;
@@ -258,5 +272,7 @@
         private Label lblAmount;
         private Label lblName;
         private Label lblFrequency;
+        private Panel panel7;
+        private Label label5;
     }
 }

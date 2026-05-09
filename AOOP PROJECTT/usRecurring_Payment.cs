@@ -15,6 +15,7 @@ namespace AOOP_PROJECTT
 
             _repo.EnsureTableExists();
             LoadFromDatabase();
+            AddRoundedBorders();
         }
 
         private void LoadFromDatabase()
@@ -82,6 +83,14 @@ namespace AOOP_PROJECTT
             }
         }
 
+        private void AddRoundedBorders()
+        {
+            UIHelper.ApplyRoundedStyle(panel3);
+            UIHelper.ApplyRoundedStyle(pnlRecurringList);
+            //UIHelper.ApplyRoundedStyle(panel4);
+            //UIHelper.ApplyRoundedStyle(panel5);
+        }
+
         public void UpdateTotalAmount()
         {
             double total = 0;
@@ -113,6 +122,23 @@ namespace AOOP_PROJECTT
         private void button1_Click(object sender, EventArgs e)
         {
             Form1.OpenAddTransaction(ParentForm, null);
+        }
+
+        private void panel7_Paint(object sender, PaintEventArgs e)
+        {
+            using var pen = new Pen(Color.FromArgb(50, 60, 80), 1f);
+            e.Graphics.DrawLine(pen, 0, panel7.Height - 1,
+                                panel7.Width, panel7.Height - 1);
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pnlRecurringList_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

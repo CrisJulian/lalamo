@@ -39,30 +39,41 @@
             lblTotalTransactions = new Label();
             label17 = new Label();
             darkpanel = new Panel();
-            lblInfoPhone = new TextBox();
-            lblMemberSince = new Label();
-            label16 = new Label();
-            lblInfoLocation = new Label();
-            label14 = new Label();
+            label13 = new Label();
             label12 = new Label();
-            lblInfoEmail = new Label();
+            label11 = new Label();
             label10 = new Label();
-            lblInfoFullName = new Label();
-            label7 = new Label();
-            label6 = new Label();
+            label9 = new Label();
+            label8 = new Label();
+            panel10 = new Panel();
+            textBox2 = new TextBox();
+            panel9 = new Panel();
+            label4 = new Label();
+            panel5 = new Panel();
+            label3 = new Label();
+            panel3 = new Panel();
+            textBox1 = new TextBox();
+            panel2 = new Panel();
+            label1 = new Label();
             panel4 = new Panel();
             lblPersonalAccount = new Label();
             lblUserFullName = new Label();
-            darkpanel3 = new Panel();
-            textBox1 = new TextBox();
             button1 = new Button();
             myDateTextBox = new TextBox();
+            panel1 = new Panel();
+            label7 = new Label();
+            label5 = new Label();
             panel8.SuspendLayout();
             panel7.SuspendLayout();
             panel6.SuspendLayout();
             darkpanel.SuspendLayout();
+            panel10.SuspendLayout();
+            panel9.SuspendLayout();
+            panel5.SuspendLayout();
+            panel3.SuspendLayout();
+            panel2.SuspendLayout();
             panel4.SuspendLayout();
-            darkpanel3.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panel8
@@ -72,17 +83,19 @@
             panel8.Controls.Add(label19);
             resources.ApplyResources(panel8, "panel8");
             panel8.Name = "panel8";
+            panel8.Paint += panel8_Paint;
             // 
             // lblSavingsRate
             // 
             resources.ApplyResources(lblSavingsRate, "lblSavingsRate");
             lblSavingsRate.ForeColor = Color.Gold;
             lblSavingsRate.Name = "lblSavingsRate";
+            lblSavingsRate.Click += lblSavingsRate_Click;
             // 
             // label19
             // 
             resources.ApplyResources(label19, "label19");
-            label19.ForeColor = SystemColors.AppWorkspace;
+            label19.ForeColor = Color.FromArgb(130, 145, 170);
             label19.Name = "label19";
             // 
             // panel7
@@ -92,6 +105,7 @@
             panel7.Controls.Add(label18);
             resources.ApplyResources(panel7, "panel7");
             panel7.Name = "panel7";
+            panel7.Paint += panel7_Paint;
             // 
             // lblActiveBudgets
             // 
@@ -102,7 +116,7 @@
             // label18
             // 
             resources.ApplyResources(label18, "label18");
-            label18.ForeColor = SystemColors.AppWorkspace;
+            label18.ForeColor = Color.FromArgb(130, 145, 170);
             label18.Name = "label18";
             // 
             // panel6
@@ -112,6 +126,7 @@
             panel6.Controls.Add(label17);
             resources.ApplyResources(panel6, "panel6");
             panel6.Name = "panel6";
+            panel6.Paint += panel6_Paint;
             // 
             // lblTotalTransactions
             // 
@@ -122,60 +137,34 @@
             // label17
             // 
             resources.ApplyResources(label17, "label17");
-            label17.ForeColor = SystemColors.AppWorkspace;
+            label17.ForeColor = Color.FromArgb(130, 145, 170);
             label17.Name = "label17";
             // 
             // darkpanel
             // 
             darkpanel.BackColor = Color.FromArgb(19, 22, 31);
-            darkpanel.Controls.Add(lblInfoPhone);
-            darkpanel.Controls.Add(lblMemberSince);
-            darkpanel.Controls.Add(label16);
-            darkpanel.Controls.Add(lblInfoLocation);
-            darkpanel.Controls.Add(label14);
+            darkpanel.Controls.Add(label13);
             darkpanel.Controls.Add(label12);
-            darkpanel.Controls.Add(lblInfoEmail);
+            darkpanel.Controls.Add(label11);
             darkpanel.Controls.Add(label10);
-            darkpanel.Controls.Add(lblInfoFullName);
-            darkpanel.Controls.Add(label7);
-            darkpanel.Controls.Add(label6);
+            darkpanel.Controls.Add(label9);
+            darkpanel.Controls.Add(label8);
+            darkpanel.Controls.Add(panel10);
+            darkpanel.Controls.Add(panel9);
+            darkpanel.Controls.Add(panel5);
+            darkpanel.Controls.Add(panel3);
+            darkpanel.Controls.Add(panel2);
             darkpanel.Controls.Add(panel4);
             darkpanel.ForeColor = Color.White;
             resources.ApplyResources(darkpanel, "darkpanel");
             darkpanel.Name = "darkpanel";
+            darkpanel.Paint += darkpanel_Paint;
             // 
-            // lblInfoPhone
+            // label13
             // 
-            lblInfoPhone.BackColor = Color.FromArgb(19, 22, 31);
-            lblInfoPhone.BorderStyle = BorderStyle.None;
-            resources.ApplyResources(lblInfoPhone, "lblInfoPhone");
-            lblInfoPhone.ForeColor = Color.White;
-            lblInfoPhone.Name = "lblInfoPhone";
-            // 
-            // lblMemberSince
-            // 
-            resources.ApplyResources(lblMemberSince, "lblMemberSince");
-            lblMemberSince.ForeColor = Color.White;
-            lblMemberSince.Name = "lblMemberSince";
-            // 
-            // label16
-            // 
-            resources.ApplyResources(label16, "label16");
-            label16.ForeColor = Color.White;
-            label16.Name = "label16";
-            // 
-            // lblInfoLocation
-            // 
-            resources.ApplyResources(lblInfoLocation, "lblInfoLocation");
-            lblInfoLocation.ForeColor = Color.White;
-            lblInfoLocation.Name = "lblInfoLocation";
-            lblInfoLocation.Click += lblInfoLocation_Click;
-            // 
-            // label14
-            // 
-            resources.ApplyResources(label14, "label14");
-            label14.ForeColor = Color.White;
-            label14.Name = "label14";
+            resources.ApplyResources(label13, "label13");
+            label13.ForeColor = Color.White;
+            label13.Name = "label13";
             // 
             // label12
             // 
@@ -183,11 +172,11 @@
             label12.ForeColor = Color.White;
             label12.Name = "label12";
             // 
-            // lblInfoEmail
+            // label11
             // 
-            resources.ApplyResources(lblInfoEmail, "lblInfoEmail");
-            lblInfoEmail.ForeColor = Color.White;
-            lblInfoEmail.Name = "lblInfoEmail";
+            resources.ApplyResources(label11, "label11");
+            label11.ForeColor = Color.White;
+            label11.Name = "label11";
             // 
             // label10
             // 
@@ -195,23 +184,85 @@
             label10.ForeColor = Color.White;
             label10.Name = "label10";
             // 
-            // lblInfoFullName
+            // label9
             // 
-            resources.ApplyResources(lblInfoFullName, "lblInfoFullName");
-            lblInfoFullName.ForeColor = Color.White;
-            lblInfoFullName.Name = "lblInfoFullName";
+            resources.ApplyResources(label9, "label9");
+            label9.ForeColor = Color.White;
+            label9.Name = "label9";
             // 
-            // label7
+            // label8
             // 
-            resources.ApplyResources(label7, "label7");
-            label7.ForeColor = Color.White;
-            label7.Name = "label7";
+            resources.ApplyResources(label8, "label8");
+            label8.ForeColor = Color.White;
+            label8.Name = "label8";
             // 
-            // label6
+            // panel10
             // 
-            resources.ApplyResources(label6, "label6");
-            label6.ForeColor = Color.White;
-            label6.Name = "label6";
+            panel10.BackColor = Color.FromArgb(15, 17, 23);
+            panel10.Controls.Add(textBox2);
+            resources.ApplyResources(panel10, "panel10");
+            panel10.Name = "panel10";
+            // 
+            // textBox2
+            // 
+            textBox2.BackColor = Color.FromArgb(15, 17, 23);
+            textBox2.BorderStyle = BorderStyle.None;
+            resources.ApplyResources(textBox2, "textBox2");
+            textBox2.ForeColor = Color.White;
+            textBox2.Name = "textBox2";
+            // 
+            // panel9
+            // 
+            panel9.BackColor = Color.FromArgb(15, 17, 23);
+            panel9.Controls.Add(label4);
+            resources.ApplyResources(panel9, "panel9");
+            panel9.Name = "panel9";
+            // 
+            // label4
+            // 
+            resources.ApplyResources(label4, "label4");
+            label4.Name = "label4";
+            // 
+            // panel5
+            // 
+            panel5.BackColor = Color.FromArgb(15, 17, 23);
+            panel5.Controls.Add(label3);
+            resources.ApplyResources(panel5, "panel5");
+            panel5.Name = "panel5";
+            // 
+            // label3
+            // 
+            resources.ApplyResources(label3, "label3");
+            label3.Name = "label3";
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.FromArgb(15, 17, 23);
+            panel3.Controls.Add(textBox1);
+            resources.ApplyResources(panel3, "panel3");
+            panel3.Name = "panel3";
+            panel3.Paint += panel3_Paint;
+            // 
+            // textBox1
+            // 
+            textBox1.BackColor = Color.FromArgb(15, 17, 23);
+            textBox1.BorderStyle = BorderStyle.None;
+            resources.ApplyResources(textBox1, "textBox1");
+            textBox1.ForeColor = Color.White;
+            textBox1.Name = "textBox1";
+            textBox1.TextChanged += textBox1_TextChanged_1;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.FromArgb(15, 17, 23);
+            panel2.Controls.Add(label1);
+            resources.ApplyResources(panel2, "panel2");
+            panel2.Name = "panel2";
+            // 
+            // label1
+            // 
+            resources.ApplyResources(label1, "label1");
+            label1.Name = "label1";
             // 
             // panel4
             // 
@@ -233,24 +284,7 @@
             resources.ApplyResources(lblUserFullName, "lblUserFullName");
             lblUserFullName.ForeColor = Color.White;
             lblUserFullName.Name = "lblUserFullName";
-            // 
-            // darkpanel3
-            // 
-            darkpanel3.BorderStyle = BorderStyle.FixedSingle;
-            darkpanel3.Controls.Add(textBox1);
-            darkpanel3.Controls.Add(button1);
-            darkpanel3.Controls.Add(myDateTextBox);
-            resources.ApplyResources(darkpanel3, "darkpanel3");
-            darkpanel3.Name = "darkpanel3";
-            darkpanel3.Paint += darkpanel3_Paint;
-            // 
-            // textBox1
-            // 
-            textBox1.BackColor = Color.FromArgb(15, 17, 23);
-            textBox1.BorderStyle = BorderStyle.None;
-            resources.ApplyResources(textBox1, "textBox1");
-            textBox1.ForeColor = Color.White;
-            textBox1.Name = "textBox1";
+            lblUserFullName.Click += lblUserFullName_Click;
             // 
             // button1
             // 
@@ -266,20 +300,42 @@
             myDateTextBox.BackColor = Color.FromArgb(15, 17, 23);
             myDateTextBox.BorderStyle = BorderStyle.None;
             resources.ApplyResources(myDateTextBox, "myDateTextBox");
-            myDateTextBox.ForeColor = Color.Gray;
+            myDateTextBox.ForeColor = Color.FromArgb(130, 145, 170);
             myDateTextBox.Name = "myDateTextBox";
             myDateTextBox.TextChanged += myDateTextBox_TextChanged;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(label7);
+            panel1.Controls.Add(myDateTextBox);
+            panel1.Controls.Add(button1);
+            panel1.Controls.Add(label5);
+            resources.ApplyResources(panel1, "panel1");
+            panel1.Name = "panel1";
+            panel1.Paint += panel1_Paint;
+            // 
+            // label7
+            // 
+            resources.ApplyResources(label7, "label7");
+            label7.ForeColor = Color.White;
+            label7.Name = "label7";
+            // 
+            // label5
+            // 
+            resources.ApplyResources(label5, "label5");
+            label5.ForeColor = Color.White;
+            label5.Name = "label5";
             // 
             // usProfile
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(15, 17, 23);
+            Controls.Add(panel1);
             Controls.Add(panel8);
             Controls.Add(panel7);
             Controls.Add(panel6);
             Controls.Add(darkpanel);
-            Controls.Add(darkpanel3);
             ForeColor = Color.CadetBlue;
             Name = "usProfile";
             Load += usProfile_Load;
@@ -291,10 +347,20 @@
             panel6.PerformLayout();
             darkpanel.ResumeLayout(false);
             darkpanel.PerformLayout();
+            panel10.ResumeLayout(false);
+            panel10.PerformLayout();
+            panel9.ResumeLayout(false);
+            panel9.PerformLayout();
+            panel5.ResumeLayout(false);
+            panel5.PerformLayout();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
-            darkpanel3.ResumeLayout(false);
-            darkpanel3.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -310,23 +376,34 @@
         private Label lblTotalTransactions;
         private Label label17;
         private Panel darkpanel;
-        private Label lblMemberSince;
-        private Label label16;
-        private Label label14;
-        private Label label12;
-        private Label lblInfoEmail;
-        private Label label10;
-        private Label lblInfoFullName;
-        private Label label7;
-        private Label label6;
         private Panel panel4;
         private Label lblPersonalAccount;
         private Label lblUserFullName;
-        private Panel darkpanel3;
         private Button button1;
         private TextBox myDateTextBox;
-        private TextBox textBox1;
-        private TextBox lblInfoPhone;
+        private Panel panel1;
+        private Label label5;
+        private Label lblInfoFullName;
+        private Label lblInfoEmail;
+        private Label lblMemberSince;
         private Label lblInfoLocation;
+        private TextBox lblInfoPhone;
+        private Panel panel3;
+        private Panel panel2;
+        private Panel panel10;
+        private Panel panel9;
+        private Panel panel5;
+        private Label label4;
+        private Label label3;
+        private Label label1;
+        private Label label10;
+        private Label label9;
+        private Label label8;
+        private Label label7;
+        private Label label13;
+        private Label label12;
+        private Label label11;
+        private TextBox textBox1;
+        private TextBox textBox2;
     }
 }
