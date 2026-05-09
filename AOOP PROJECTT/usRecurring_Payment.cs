@@ -58,7 +58,8 @@ namespace AOOP_PROJECTT
         {
             using (var popup = new AddRecurringForm())
             {
-                if (popup.ShowDialog() != DialogResult.OK) return;
+                popup.StartPosition = FormStartPosition.CenterParent;
+                if (popup.ShowDialog(ParentForm) != DialogResult.OK) return;
 
                 if (!decimal.TryParse(popup.FinalAmount, out decimal amount))
                 {
