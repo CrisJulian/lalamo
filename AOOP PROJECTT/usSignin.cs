@@ -32,7 +32,11 @@ namespace AOOP_PROJECTT
             NavigateToLogin?.Invoke(this, EventArgs.Empty);
         }
 
-        private void usSignin_Load(object sender, EventArgs e) { }
+        private void usSignin_Load(object sender, EventArgs e) 
+        {
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.Image = Properties.Resources.backgroundremover_removebg_preview;
+        }
         private void textBox16_TextChanged(object sender, EventArgs e) { }
 
         private void txtFullName_Enter(object sender, EventArgs e)
@@ -161,5 +165,47 @@ namespace AOOP_PROJECTT
                 MessageBox.Show("Database error: " + ex.Message);
             }
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox13_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+        }
+
+
     }
 }

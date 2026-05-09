@@ -31,6 +31,8 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(usLogin));
             panel1 = new Panel();
+            label18 = new Label();
+            pictureBox1 = new PictureBox();
             label8 = new Label();
             label7 = new Label();
             label6 = new Label();
@@ -39,7 +41,6 @@
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
-            pictureBox1 = new PictureBox();
             contextMenuStrip1 = new ContextMenuStrip(components);
             contextMenuStrip2 = new ContextMenuStrip(components);
             textBox14 = new TextBox();
@@ -68,6 +69,8 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(19, 22, 31);
+            panel1.Controls.Add(label18);
+            panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(label8);
             panel1.Controls.Add(label7);
             panel1.Controls.Add(label6);
@@ -76,18 +79,38 @@
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
-            panel1.Controls.Add(pictureBox1);
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(391, 687);
             panel1.TabIndex = 0;
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.Font = new Font("Microsoft Sans Serif", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label18.ForeColor = Color.FromArgb(245, 166, 35);
+            label18.Location = new Point(118, 65);
+            label18.Name = "label18";
+            label18.Size = new Size(221, 33);
+            label18.TabIndex = 20;
+            label18.Text = "CommonCents";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(38, 43);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(73, 69);
+            pictureBox1.TabIndex = 19;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click_1;
             // 
             // label8
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Microsoft Sans Serif", 10F);
             label8.ForeColor = Color.FromArgb(130, 145, 170);
-            label8.Location = new Point(40, 497);
+            label8.Location = new Point(40, 528);
             label8.Name = "label8";
             label8.Size = new Size(80, 17);
             label8.TabIndex = 18;
@@ -99,7 +122,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("Microsoft Sans Serif", 10F);
             label7.ForeColor = Color.FromArgb(130, 145, 170);
-            label7.Location = new Point(40, 480);
+            label7.Location = new Point(40, 511);
             label7.Name = "label7";
             label7.Size = new Size(317, 17);
             label7.TabIndex = 17;
@@ -110,7 +133,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("Microsoft Sans Serif", 10F);
             label6.ForeColor = Color.FromArgb(130, 145, 170);
-            label6.Location = new Point(39, 463);
+            label6.Location = new Point(39, 494);
             label6.Name = "label6";
             label6.Size = new Size(337, 17);
             label6.TabIndex = 16;
@@ -119,11 +142,11 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Microsoft Sans Serif", 30.75F, FontStyle.Bold);
+            label5.Font = new Font("Microsoft Sans Serif", 35.75F, FontStyle.Bold);
             label5.ForeColor = Color.FromArgb(245, 166, 35);
-            label5.Location = new Point(36, 407);
+            label5.Location = new Point(36, 416);
             label5.Name = "label5";
-            label5.Size = new Size(195, 47);
+            label5.Size = new Size(225, 55);
             label5.TabIndex = 15;
             label5.Text = "finances.";
             // 
@@ -132,7 +155,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Microsoft Sans Serif", 35.75F, FontStyle.Bold);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(39, 350);
+            label4.Location = new Point(36, 350);
             label4.Name = "label4";
             label4.Size = new Size(122, 55);
             label4.TabIndex = 14;
@@ -144,7 +167,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Microsoft Sans Serif", 35.75F, FontStyle.Bold);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(35, 294);
+            label3.Location = new Point(31, 295);
             label3.Name = "label3";
             label3.Size = new Size(245, 55);
             label3.TabIndex = 13;
@@ -155,7 +178,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft Sans Serif", 35.75F, FontStyle.Bold);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(36, 244);
+            label2.Location = new Point(31, 248);
             label2.Name = "label2";
             label2.Size = new Size(135, 55);
             label2.TabIndex = 12;
@@ -165,24 +188,14 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Microsoft Sans Serif", 9.75F);
+            label1.Font = new Font("Microsoft Sans Serif", 9F);
             label1.ForeColor = Color.FromArgb(245, 166, 35);
-            label1.Location = new Point(42, 230);
+            label1.Location = new Point(40, 222);
             label1.Name = "label1";
-            label1.Size = new Size(141, 16);
+            label1.Size = new Size(126, 15);
             label1.TabIndex = 11;
             label1.Text = "PERSONAL FINANCE";
             label1.Click += label1_Click;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(105, 30);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(155, 158);
-            pictureBox1.TabIndex = 10;
-            pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
             // 
             // contextMenuStrip1
             // 
@@ -426,7 +439,6 @@
         private Button button1;
         private ContextMenuStrip contextMenuStrip3;
         private Button button3;
-        private PictureBox pictureBox1;
         private Label label4;
         private Label label3;
         private Label label2;
@@ -448,5 +460,7 @@
         private Label label15;
         private Label label17;
         private Label label16;
+        private PictureBox pictureBox1;
+        private Label label18;
     }
 }

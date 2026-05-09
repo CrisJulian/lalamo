@@ -111,7 +111,8 @@ namespace AOOP_PROJECTT
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.BringToFront();
         }
 
         private void button1_Click(object sender, EventArgs e)

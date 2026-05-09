@@ -112,7 +112,7 @@ namespace AOOP_PROJECTT
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
         }
 
         private void textBox14_TextChanged(object sender, EventArgs e)
@@ -201,6 +201,11 @@ namespace AOOP_PROJECTT
             SessionManager.MemberSince = DateTime.Now;
 
             LoginSuccessful?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
