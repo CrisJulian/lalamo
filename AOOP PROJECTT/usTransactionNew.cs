@@ -16,6 +16,24 @@ namespace AOOP_PROJECTT
         {
             InitializeComponent();
             txtSearch.PlaceholderText = "Search transactions...";
+            myDateTextBox.Text = DateTime.Now.ToString("ddd, MMM d, yyyy"); // 👈 add this
+            myDateTextBox.ReadOnly = true; // 👈 add this too so it can't be edited
+
+            UIHelper.ApplyRoundedStyle(panelSearch);
+            UIHelper.ApplyRoundedStyle(panel2);
+
+            foreach (Button btn in new[] { btnAll, btnIncome, btnExpense })
+            {
+                btn.Region = Region.FromHrgn(
+                    UIHelper.CreateRoundRectRgn(0, 0, btn.Width, btn.Height, 6, 6));
+            }
+
+            flowLayoutPanel1.Region = Region.FromHrgn(
+                UIHelper.CreateRoundRectRgn(0, 0, flowLayoutPanel1.Width, flowLayoutPanel1.Height, 10, 10));
+
+            flowLayoutPanel1.Resize += (s, e) => flowLayoutPanel1.Region = Region.FromHrgn(
+                UIHelper.CreateRoundRectRgn(0, 0, flowLayoutPanel1.Width, flowLayoutPanel1.Height, 10, 10));
+
         }
 
         private void UpdateResultCount()
@@ -28,29 +46,33 @@ namespace AOOP_PROJECTT
             lblResultCount.Text = $"{count} results";
         }
 
-        public void AddRowToList(string date, string desc, string cat, string type, string amount)
-        {
-            usTransactionRow row = new usTransactionRow();
-            row.SetTransactionData(date, desc, cat, type, amount);
-            flowLayoutPanel1.Controls.Add(row);
-            flowLayoutPanel1.Controls.SetChildIndex(row, 0); // Keeps newest at the top
-            UpdateResultCount();
-        }
-
-        private void LoadFromDatabase()
+        private void LoadTransactionsFromDb()
         {
             flowLayoutPanel1.Controls.Clear();
             var transactions = TransactionRepository.GetTransactions(SessionManager.UserId);
             foreach (var tx in transactions)
             {
-                AddRowToList(
+                usTransactionRow row = new usTransactionRow();
+                row.SetTransactionData(
+                    tx.TransactionId,
                     tx.Date.ToString("MMM dd"),
                     tx.Description,
-                    tx.Type == "Income" ? "Income" : "Expense",
+                    tx.Category,
                     tx.Type,
                     tx.Amount.ToString()
                 );
+                flowLayoutPanel1.Controls.Add(row);
             }
+            UpdateResultCount();
+        }
+
+        public void AddRowToList(string date, string desc, string cat, string type, string amount)
+        {
+            usTransactionRow row = new usTransactionRow();
+            row.SetTransactionData(0, date, desc, cat, type, amount);
+            flowLayoutPanel1.Controls.Add(row);
+            flowLayoutPanel1.Controls.SetChildIndex(row, 0); // Keeps newest at the top
+            UpdateResultCount();
         }
 
         // --- UPDATED MASTER FILTER ---
@@ -102,24 +124,7 @@ namespace AOOP_PROJECTT
 
         private void button4_Click(object sender, EventArgs e)
         {
-            using var modal = new AddTransactionForm();
-            if (modal.ShowDialog() == DialogResult.OK)
-            {
-                var tx = new TransactionRecord
-                {
-                    Amount = double.TryParse(modal.TAmount, out var v) ? v : 0,
-                    Description = modal.TDescription,
-                    Date = DateTime.Now,
-                    Type = modal.TType
-                };
-
-                int newId = TransactionRepository.AddTransaction(SessionManager.UserId, tx);
-                if (newId > 0)
-                {
-                    AddRowToList(modal.TDate, modal.TDescription,
-                        modal.TCategory, modal.TType, modal.TAmount);
-                }
-            }
+            Form1.OpenAddTransaction(ParentForm, LoadTransactionsFromDb);
         }
 
         // --- NEW BUTTON CLICK METHODS (Link these in the Designer) ---
@@ -149,11 +154,28 @@ namespace AOOP_PROJECTT
         private void panel3_Paint(object sender, PaintEventArgs e) { }
         private void textBox1_TextChanged(object sender, EventArgs e) { }
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e) { }
-        private void usTransactionNew_Load(object sender, EventArgs e) 
+        private void usTransactionNew_Load(object sender, EventArgs e)
         {
-            LoadFromDatabase();
+            LoadTransactionsFromDb();
         }
         private void textBoxSearch_TextChanged(object sender, EventArgs e) { FilterTransactions(); }
         private void comboBoxFilter_SelectedIndexChanged(object sender, EventArgs e) { FilterTransactions(); }
+
+        private void myDateTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel7_Paint(object sender, PaintEventArgs e)
+        {
+            using var pen = new Pen(Color.FromArgb(50, 60, 80), 1f);
+            e.Graphics.DrawLine(pen, 0, panel7.Height - 1,
+                                panel7.Width, panel7.Height - 1);
+        }
+
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

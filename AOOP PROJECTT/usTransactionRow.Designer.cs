@@ -33,6 +33,7 @@
             lblCategory = new Label();
             lblType = new Label();
             lblAmount = new Label();
+            btnDelete = new Button();
             SuspendLayout();
             // 
             // lblDate
@@ -61,7 +62,7 @@
             // 
             lblCategory.ForeColor = Color.White;
             lblCategory.ImageAlign = ContentAlignment.MiddleRight;
-            lblCategory.Location = new Point(476, 9);
+            lblCategory.Location = new Point(390, 9);
             lblCategory.Name = "lblCategory";
             lblCategory.Size = new Size(115, 25);
             lblCategory.TabIndex = 2;
@@ -73,7 +74,7 @@
             // 
             lblType.ForeColor = Color.White;
             lblType.ImageAlign = ContentAlignment.MiddleRight;
-            lblType.Location = new Point(640, 9);
+            lblType.Location = new Point(530, 9);
             lblType.Name = "lblType";
             lblType.Size = new Size(80, 25);
             lblType.TabIndex = 3;
@@ -85,12 +86,29 @@
             lblAmount.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             lblAmount.ForeColor = Color.White;
             lblAmount.ImageAlign = ContentAlignment.MiddleRight;
-            lblAmount.Location = new Point(789, 14);
+            lblAmount.Location = new Point(659, 13);
             lblAmount.Name = "lblAmount";
-            lblAmount.Size = new Size(98, 25);
+            lblAmount.Size = new Size(170, 25);
             lblAmount.TabIndex = 4;
             lblAmount.Text = "₱1,850.00";
             lblAmount.Click += lblAmount_Click;
+            // 
+            // btnDelete
+            // 
+            btnDelete.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnDelete.BackColor = Color.Red;
+            btnDelete.FlatAppearance.BorderSize = 0;
+            btnDelete.FlatStyle = FlatStyle.Flat;
+            btnDelete.Font = new Font("Segoe UI", 8F);
+            btnDelete.ForeColor = SystemColors.ActiveCaptionText;
+            btnDelete.Location = new Point(835, 9);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Padding = new Padding(0, 0, 0, 2);
+            btnDelete.Size = new Size(22, 22);
+            btnDelete.TabIndex = 5;
+            btnDelete.Text = "X";
+            btnDelete.UseVisualStyleBackColor = false;
+            btnDelete.Click += btnDelete_Click;
             // 
             // usTransactionRow
             // 
@@ -102,6 +120,7 @@
             Controls.Add(lblCategory);
             Controls.Add(lblDescription);
             Controls.Add(lblDate);
+            Controls.Add(btnDelete);
             Name = "usTransactionRow";
             Size = new Size(878, 44);
             Load += usTransactionRow_Load;
@@ -115,5 +134,6 @@
         public Label lblCategory;
         public Label lblType;
         public Label lblAmount;
+        private Button btnDelete;
     }
 }

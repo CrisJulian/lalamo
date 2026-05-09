@@ -16,7 +16,7 @@ namespace AOOP_PROJECTT
         {
             InitializeComponent();
 
-            myDateTextBox.Text = DateTime.Now.ToString("ddd, MMM dd, yyyy");
+            myDateTextBox.Text = DateTime.Now.ToString("ddd, MMM d, yyyy");
             myDateTextBox.ReadOnly = true;
 
             // Load all dashboard data from DB
@@ -29,6 +29,7 @@ namespace AOOP_PROJECTT
             int userId = SessionManager.UserId;
             if (userId == 0) return;
 
+            AddRoundedBorders();
             LoadSummary(userId);
             LoadBudgetStatus(userId);
             LoadSavingsGoals(userId);
@@ -81,6 +82,15 @@ namespace AOOP_PROJECTT
         }
 
         // ── INCOME SPENT PROGRESS BAR (inside panel2) ──────────────────
+
+        private void AddRoundedBorders()
+        {
+            UIHelper.ApplyRoundedStyle(panel2);
+            UIHelper.ApplyRoundedStyle(panel3);
+            UIHelper.ApplyRoundedStyle(panel4);
+            UIHelper.ApplyRoundedStyle(panel5);
+        }
+
         private void DrawIncomeSpentBar(double percent)
         {
             // Remove any existing progress bar we added before
@@ -288,36 +298,26 @@ namespace AOOP_PROJECTT
         }
 
         // ── EXISTING HANDLERS (unchanged) ──────────────────────────────
-        private void panel7_Paint(object sender, PaintEventArgs e) { }
+        private void panel7_Paint(object sender, PaintEventArgs e)
+        {
+            using var pen = new Pen(Color.FromArgb(50, 60, 80), 1f);
+            e.Graphics.DrawLine(pen, 0, panel7.Height - 1,
+                                panel7.Width, panel7.Height - 1);
+        }
 
         private void myDateTextBox_TextChanged(object sender, EventArgs e)
         {
-            myDateTextBox.Text = DateTime.Now.ToString("ddd, MMM dd, yyyy");
+            myDateTextBox.Text = DateTime.Now.ToString("ddd, MMM d, yyyy");
         }
 
-        private void button1_Click(object sender, EventArgs e) { }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form1.OpenAddTransaction(ParentForm, LoadDashboard);
+        }
 
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
-            panel3.Paint += (s, ev) =>
-            {
-                ev.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-                using var pen = new Pen(Color.FromArgb(50, 60, 80), 1.5f);
-                using var path = RoundedRect(new Rectangle(0, 0, panel3.Width - 1, panel3.Height - 1), 10);
-                ev.Graphics.DrawPath(pen, path);
-            };
-        }
 
-        private static GraphicsPath RoundedRect(Rectangle bounds, int radius)
-        {
-            int d = radius * 2;
-            var path = new GraphicsPath();
-            path.AddArc(bounds.X, bounds.Y, d, d, 180, 90);
-            path.AddArc(bounds.Right - d, bounds.Y, d, d, 270, 90);
-            path.AddArc(bounds.Right - d, bounds.Bottom - d, d, d, 0, 90);
-            path.AddArc(bounds.X, bounds.Bottom - d, d, d, 90, 90);
-            path.CloseFigure();
-            return path;
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e) { }
@@ -333,6 +333,11 @@ namespace AOOP_PROJECTT
         }
 
         private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click_1(object sender, EventArgs e)
         {
 
         }

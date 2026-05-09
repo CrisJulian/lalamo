@@ -380,6 +380,7 @@
             label11.Size = new Size(39, 28);
             label11.TabIndex = 6;
             label11.Text = "🔓";
+            label11.Click += label11_Click;
             // 
             // label6
             // 
@@ -571,7 +572,7 @@
             // 
             button1.BackColor = Color.FromArgb(245, 166, 35);
             button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 10F);
+            button1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.Black;
             button1.Location = new Point(768, 7);
             button1.Name = "button1";
@@ -579,6 +580,7 @@
             button1.TabIndex = 15;
             button1.Text = "+ Add Transaction";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // myDateTextBox
             // 
@@ -591,6 +593,7 @@
             myDateTextBox.Size = new Size(297, 16);
             myDateTextBox.TabIndex = 16;
             myDateTextBox.Text = "Date";
+            myDateTextBox.TextChanged += myDateTextBox_TextChanged;
             // 
             // panel9
             // 

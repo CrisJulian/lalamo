@@ -55,7 +55,7 @@ namespace CommonCents
             panel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));
 
             int row = 0;
-            txtName = AddRow(panel, "Category Name:", row++);
+            txtName = AddCategoryDropdown(panel, "Category Name:", row++);
             txtLimit = AddRow(panel, "Monthly Limit (₱):", row++);
 
             var btnPanel = new FlowLayoutPanel
@@ -82,6 +82,30 @@ namespace CommonCents
             panel.Controls.Add(btnPanel, 0, row);
 
             Controls.Add(panel);
+        }
+
+        private TextBox AddCategoryDropdown(TableLayoutPanel p, string lbl, int row)
+        {
+            p.Controls.Add(MakeLbl(lbl), 0, row);
+            var cmb = new ComboBox
+            {
+                Dock = DockStyle.Fill,
+                BackColor = Color.FromArgb(45, 52, 70),
+                ForeColor = Color.White,
+                FlatStyle = FlatStyle.Flat,
+                DropDownStyle = ComboBoxStyle.DropDownList
+            };
+            cmb.Items.AddRange(new object[] { "Food", "Transport", "Entertainment",
+        "Utilities", "Healthcare", "Shopping", "Health", "Software", "Other" });
+            cmb.SelectedIndex = 0;
+            p.Controls.Add(cmb, 1, row);
+
+            // wrap in a TextBox-compatible way via a proxy TextBox
+            var proxy = new TextBox { Visible = false };
+            cmb.SelectedIndexChanged += (s, e) => proxy.Text = cmb.Text;
+            proxy.Text = cmb.Text;
+            Controls.Add(proxy);
+            return proxy;
         }
 
         private TextBox AddRow(TableLayoutPanel p, string lbl, int row)

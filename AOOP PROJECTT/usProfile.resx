@@ -118,35 +118,39 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="label22.AutoSize" type="System.Boolean, mscorlib">
+  <data name="lblSavingsRate.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="label22.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="lblSavingsRate.Font" type="System.Drawing.Font, System.Drawing">
     <value>SimSun, 18pt, style=Bold</value>
   </data>
-  <data name="label22.Location" type="System.Drawing.Point, System.Drawing">
-    <value>98, 66</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="lblSavingsRate.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="label22.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="lblSavingsRate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>86, 66</value>
+  </data>
+  <data name="lblSavingsRate.Size" type="System.Drawing.Size, System.Drawing">
     <value>49, 24</value>
   </data>
-  <data name="label22.TabIndex" type="System.Int32, mscorlib">
+  <data name="lblSavingsRate.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
   </data>
-  <data name="label22.Text" xml:space="preserve">
+  <data name="lblSavingsRate.Text" xml:space="preserve">
     <value>22%</value>
   </data>
-  <data name="&gt;&gt;label22.Name" xml:space="preserve">
-    <value>label22</value>
+  <data name="&gt;&gt;lblSavingsRate.Name" xml:space="preserve">
+    <value>lblSavingsRate</value>
   </data>
-  <data name="&gt;&gt;label22.Type" xml:space="preserve">
+  <data name="&gt;&gt;lblSavingsRate.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label22.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lblSavingsRate.Parent" xml:space="preserve">
     <value>panel8</value>
   </data>
-  <data name="&gt;&gt;label22.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lblSavingsRate.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="label19.AutoSize" type="System.Boolean, mscorlib">
@@ -156,7 +160,7 @@
     <value>Tahoma, 12.75pt</value>
   </data>
   <data name="label19.Location" type="System.Drawing.Point, System.Drawing">
-    <value>72, 16</value>
+    <value>60, 16</value>
   </data>
   <data name="label19.Size" type="System.Drawing.Size, System.Drawing">
     <value>106, 21</value>
@@ -200,34 +204,37 @@
   <data name="&gt;&gt;panel8.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="label21.AutoSize" type="System.Boolean, mscorlib">
+  <data name="lblActiveBudgets.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label21.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="lblActiveBudgets.Font" type="System.Drawing.Font, System.Drawing">
     <value>SimSun, 18pt, style=Bold</value>
   </data>
-  <data name="label21.Location" type="System.Drawing.Point, System.Drawing">
-    <value>105, 66</value>
+  <data name="lblActiveBudgets.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="label21.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="lblActiveBudgets.Location" type="System.Drawing.Point, System.Drawing">
+    <value>99, 66</value>
+  </data>
+  <data name="lblActiveBudgets.Size" type="System.Drawing.Size, System.Drawing">
     <value>23, 24</value>
   </data>
-  <data name="label21.TabIndex" type="System.Int32, mscorlib">
+  <data name="lblActiveBudgets.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
   </data>
-  <data name="label21.Text" xml:space="preserve">
+  <data name="lblActiveBudgets.Text" xml:space="preserve">
     <value>8</value>
   </data>
-  <data name="&gt;&gt;label21.Name" xml:space="preserve">
-    <value>label21</value>
+  <data name="&gt;&gt;lblActiveBudgets.Name" xml:space="preserve">
+    <value>lblActiveBudgets</value>
   </data>
-  <data name="&gt;&gt;label21.Type" xml:space="preserve">
+  <data name="&gt;&gt;lblActiveBudgets.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label21.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lblActiveBudgets.Parent" xml:space="preserve">
     <value>panel7</value>
   </data>
-  <data name="&gt;&gt;label21.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lblActiveBudgets.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="label18.AutoSize" type="System.Boolean, mscorlib">
@@ -237,7 +244,7 @@
     <value>Tahoma, 12.75pt</value>
   </data>
   <data name="label18.Location" type="System.Drawing.Point, System.Drawing">
-    <value>56, 16</value>
+    <value>50, 16</value>
   </data>
   <data name="label18.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 21</value>
@@ -281,34 +288,37 @@
   <data name="&gt;&gt;panel7.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="label20.AutoSize" type="System.Boolean, mscorlib">
+  <data name="lblTotalTransactions.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label20.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="lblTotalTransactions.Font" type="System.Drawing.Font, System.Drawing">
     <value>SimSun, 18pt, style=Bold</value>
   </data>
-  <data name="label20.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="lblTotalTransactions.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblTotalTransactions.Location" type="System.Drawing.Point, System.Drawing">
     <value>97, 66</value>
   </data>
-  <data name="label20.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="lblTotalTransactions.Size" type="System.Drawing.Size, System.Drawing">
     <value>62, 24</value>
   </data>
-  <data name="label20.TabIndex" type="System.Int32, mscorlib">
+  <data name="lblTotalTransactions.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
   </data>
-  <data name="label20.Text" xml:space="preserve">
+  <data name="lblTotalTransactions.Text" xml:space="preserve">
     <value>1247</value>
   </data>
-  <data name="&gt;&gt;label20.Name" xml:space="preserve">
-    <value>label20</value>
+  <data name="&gt;&gt;lblTotalTransactions.Name" xml:space="preserve">
+    <value>lblTotalTransactions</value>
   </data>
-  <data name="&gt;&gt;label20.Type" xml:space="preserve">
+  <data name="&gt;&gt;lblTotalTransactions.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label20.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lblTotalTransactions.Parent" xml:space="preserve">
     <value>panel6</value>
   </data>
-  <data name="&gt;&gt;label20.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lblTotalTransactions.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="label17.AutoSize" type="System.Boolean, mscorlib">
@@ -362,35 +372,62 @@
   <data name="&gt;&gt;panel6.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="label15.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label15.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="lblInfoPhone.Font" type="System.Drawing.Font, System.Drawing">
     <value>SimSun, 14pt</value>
   </data>
-  <data name="label15.Location" type="System.Drawing.Point, System.Drawing">
-    <value>107, 312</value>
+  <data name="lblInfoPhone.Location" type="System.Drawing.Point, System.Drawing">
+    <value>107, 246</value>
   </data>
-  <data name="label15.Size" type="System.Drawing.Size, System.Drawing">
-    <value>179, 19</value>
+  <data name="lblInfoPhone.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 22</value>
   </data>
-  <data name="label15.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
+  <data name="lblInfoPhone.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
   </data>
-  <data name="label15.Text" xml:space="preserve">
-    <value> January 15, 2024</value>
+  <data name="lblInfoPhone.Text" xml:space="preserve">
+    <value> +63 912 345 6789</value>
   </data>
-  <data name="&gt;&gt;label15.Name" xml:space="preserve">
-    <value>label15</value>
+  <data name="&gt;&gt;lblInfoPhone.Name" xml:space="preserve">
+    <value>lblInfoPhone</value>
   </data>
-  <data name="&gt;&gt;label15.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;lblInfoPhone.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label15.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lblInfoPhone.Parent" xml:space="preserve">
     <value>darkpanel</value>
   </data>
-  <data name="&gt;&gt;label15.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lblInfoPhone.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="lblMemberSince.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblMemberSince.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimSun, 14pt</value>
+  </data>
+  <data name="lblMemberSince.Location" type="System.Drawing.Point, System.Drawing">
+    <value>107, 312</value>
+  </data>
+  <data name="lblMemberSince.Size" type="System.Drawing.Size, System.Drawing">
+    <value>179, 19</value>
+  </data>
+  <data name="lblMemberSince.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="lblMemberSince.Text" xml:space="preserve">
+    <value> January 15, 2024</value>
+  </data>
+  <data name="&gt;&gt;lblMemberSince.Name" xml:space="preserve">
+    <value>lblMemberSince</value>
+  </data>
+  <data name="&gt;&gt;lblMemberSince.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblMemberSince.Parent" xml:space="preserve">
+    <value>darkpanel</value>
+  </data>
+  <data name="&gt;&gt;lblMemberSince.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="label16.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -420,37 +457,40 @@
     <value>darkpanel</value>
   </data>
   <data name="&gt;&gt;label16.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
-  <data name="label13.AutoSize" type="System.Boolean, mscorlib">
+  <data name="lblInfoLocation.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label13.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="lblInfoLocation.Font" type="System.Drawing.Font, System.Drawing">
     <value>SimSun, 14pt</value>
   </data>
-  <data name="label13.Location" type="System.Drawing.Point, System.Drawing">
-    <value>441, 246</value>
+  <data name="lblInfoLocation.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="lblInfoLocation.Location" type="System.Drawing.Point, System.Drawing">
+    <value>432, 246</value>
+  </data>
+  <data name="lblInfoLocation.Size" type="System.Drawing.Size, System.Drawing">
     <value>209, 19</value>
   </data>
-  <data name="label13.TabIndex" type="System.Int32, mscorlib">
+  <data name="lblInfoLocation.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
   </data>
-  <data name="label13.Text" xml:space="preserve">
+  <data name="lblInfoLocation.Text" xml:space="preserve">
     <value> Manila, Philippines</value>
   </data>
-  <data name="&gt;&gt;label13.Name" xml:space="preserve">
-    <value>label13</value>
+  <data name="&gt;&gt;lblInfoLocation.Name" xml:space="preserve">
+    <value>lblInfoLocation</value>
   </data>
-  <data name="&gt;&gt;label13.Type" xml:space="preserve">
+  <data name="&gt;&gt;lblInfoLocation.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label13.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lblInfoLocation.Parent" xml:space="preserve">
     <value>darkpanel</value>
   </data>
-  <data name="&gt;&gt;label13.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;lblInfoLocation.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="label14.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -480,36 +520,6 @@
     <value>darkpanel</value>
   </data>
   <data name="&gt;&gt;label14.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="label11.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label11.Font" type="System.Drawing.Font, System.Drawing">
-    <value>SimSun, 14pt</value>
-  </data>
-  <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
-    <value>107, 246</value>
-  </data>
-  <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>179, 19</value>
-  </data>
-  <data name="label11.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="label11.Text" xml:space="preserve">
-    <value> +63 912 345 6789</value>
-  </data>
-  <data name="&gt;&gt;label11.Name" xml:space="preserve">
-    <value>label11</value>
-  </data>
-  <data name="&gt;&gt;label11.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label11.Parent" xml:space="preserve">
-    <value>darkpanel</value>
-  </data>
-  <data name="&gt;&gt;label11.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
   <data name="label12.AutoSize" type="System.Boolean, mscorlib">
@@ -542,34 +552,34 @@
   <data name="&gt;&gt;label12.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="label9.AutoSize" type="System.Boolean, mscorlib">
+  <data name="lblInfoEmail.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label9.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="lblInfoEmail.Font" type="System.Drawing.Font, System.Drawing">
     <value>SimSun, 14pt</value>
   </data>
-  <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="lblInfoEmail.Location" type="System.Drawing.Point, System.Drawing">
     <value>441, 177</value>
   </data>
-  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="lblInfoEmail.Size" type="System.Drawing.Size, System.Drawing">
     <value>239, 19</value>
   </data>
-  <data name="label9.TabIndex" type="System.Int32, mscorlib">
+  <data name="lblInfoEmail.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
-  <data name="label9.Text" xml:space="preserve">
+  <data name="lblInfoEmail.Text" xml:space="preserve">
     <value>juan.delacruz@email.com</value>
   </data>
-  <data name="&gt;&gt;label9.Name" xml:space="preserve">
-    <value>label9</value>
+  <data name="&gt;&gt;lblInfoEmail.Name" xml:space="preserve">
+    <value>lblInfoEmail</value>
   </data>
-  <data name="&gt;&gt;label9.Type" xml:space="preserve">
+  <data name="&gt;&gt;lblInfoEmail.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label9.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lblInfoEmail.Parent" xml:space="preserve">
     <value>darkpanel</value>
   </data>
-  <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lblInfoEmail.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
   <data name="label10.AutoSize" type="System.Boolean, mscorlib">
@@ -602,34 +612,34 @@
   <data name="&gt;&gt;label10.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="label8.AutoSize" type="System.Boolean, mscorlib">
+  <data name="lblInfoFullName.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label8.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="lblInfoFullName.Font" type="System.Drawing.Font, System.Drawing">
     <value>SimSun, 14pt</value>
   </data>
-  <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="lblInfoFullName.Location" type="System.Drawing.Point, System.Drawing">
     <value>107, 177</value>
   </data>
-  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="lblInfoFullName.Size" type="System.Drawing.Size, System.Drawing">
     <value>159, 19</value>
   </data>
-  <data name="label8.TabIndex" type="System.Int32, mscorlib">
+  <data name="lblInfoFullName.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="label8.Text" xml:space="preserve">
+  <data name="lblInfoFullName.Text" xml:space="preserve">
     <value> Juan Dela Cruz</value>
   </data>
-  <data name="&gt;&gt;label8.Name" xml:space="preserve">
-    <value>label8</value>
+  <data name="&gt;&gt;lblInfoFullName.Name" xml:space="preserve">
+    <value>lblInfoFullName</value>
   </data>
-  <data name="&gt;&gt;label8.Type" xml:space="preserve">
+  <data name="&gt;&gt;lblInfoFullName.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label8.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lblInfoFullName.Parent" xml:space="preserve">
     <value>darkpanel</value>
   </data>
-  <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lblInfoFullName.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
   <data name="label7.AutoSize" type="System.Boolean, mscorlib">
@@ -692,64 +702,67 @@
   <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
-  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
+  <data name="lblPersonalAccount.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label5.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="lblPersonalAccount.Font" type="System.Drawing.Font, System.Drawing">
     <value>SimSun, 12.75pt</value>
   </data>
-  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="lblPersonalAccount.Location" type="System.Drawing.Point, System.Drawing">
     <value>315, 74</value>
   </data>
-  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="lblPersonalAccount.Size" type="System.Drawing.Size, System.Drawing">
     <value>152, 17</value>
   </data>
-  <data name="label5.TabIndex" type="System.Int32, mscorlib">
+  <data name="lblPersonalAccount.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="label5.Text" xml:space="preserve">
+  <data name="lblPersonalAccount.Text" xml:space="preserve">
     <value>Personal Account</value>
   </data>
-  <data name="&gt;&gt;label5.Name" xml:space="preserve">
-    <value>label5</value>
+  <data name="&gt;&gt;lblPersonalAccount.Name" xml:space="preserve">
+    <value>lblPersonalAccount</value>
   </data>
-  <data name="&gt;&gt;label5.Type" xml:space="preserve">
+  <data name="&gt;&gt;lblPersonalAccount.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lblPersonalAccount.Parent" xml:space="preserve">
     <value>panel4</value>
   </data>
-  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lblPersonalAccount.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
+  <data name="lblUserFullName.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label4.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="lblUserFullName.Font" type="System.Drawing.Font, System.Drawing">
     <value>SimSun, 22pt, style=Bold</value>
   </data>
-  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="lblUserFullName.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblUserFullName.Location" type="System.Drawing.Point, System.Drawing">
     <value>279, 32</value>
   </data>
-  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="lblUserFullName.Size" type="System.Drawing.Size, System.Drawing">
     <value>237, 30</value>
   </data>
-  <data name="label4.TabIndex" type="System.Int32, mscorlib">
+  <data name="lblUserFullName.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="label4.Text" xml:space="preserve">
+  <data name="lblUserFullName.Text" xml:space="preserve">
     <value>Juan Dela Cruz</value>
   </data>
-  <data name="&gt;&gt;label4.Name" xml:space="preserve">
-    <value>label4</value>
+  <data name="&gt;&gt;lblUserFullName.Name" xml:space="preserve">
+    <value>lblUserFullName</value>
   </data>
-  <data name="&gt;&gt;label4.Type" xml:space="preserve">
+  <data name="&gt;&gt;lblUserFullName.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lblUserFullName.Parent" xml:space="preserve">
     <value>panel4</value>
   </data>
-  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lblUserFullName.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="panel4.Location" type="System.Drawing.Point, System.Drawing">
@@ -821,12 +834,11 @@
   <data name="&gt;&gt;textBox1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="button1.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
   <data name="button1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 10pt</value>
+    <value>Segoe UI, 9.75pt, style=Bold</value>
   </data>
   <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
     <value>771, 8</value>

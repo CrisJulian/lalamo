@@ -60,7 +60,7 @@
             // 
             button1.BackColor = Color.FromArgb(245, 166, 35);
             button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 10F);
+            button1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.Black;
             button1.Location = new Point(765, 10);
             button1.Name = "button1";
@@ -68,6 +68,7 @@
             button1.TabIndex = 3;
             button1.Text = "+ Add Transaction";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // myDateTextBox
             // 

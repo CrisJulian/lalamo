@@ -49,52 +49,66 @@ namespace CommonCents
         // ── UI BUILD ───────────────────────────────────────────────────
         private void BuildUI()
         {
-            var outer = new Panel
-            {
-                Dock       = DockStyle.Fill,
-                AutoScroll = true,
-                BackColor  = BgDark,
-                Padding    = new Padding(18)
-            };
-            Controls.Add(outer);
-
-            var topBar   = new Panel { Height = 46, Dock = DockStyle.Top, BackColor = BgDark };
+            // ── Top bar ─────────────────────────────────────────────
+            var topBar = new Panel { Height = 55, Dock = DockStyle.Top, BackColor = BgDark };
             var lblTitle = new Label
             {
-                Text      = "Debts",
-                Font      = new Font("Segoe UI", 16f, FontStyle.Bold),
+                Text = "Debts",
+                Font = new Font("Segoe UI", 16f, FontStyle.Bold),
                 ForeColor = Color.White,
-                AutoSize  = true,
-                Location  = new Point(0, 8)
+                AutoSize = true,
+                Location = new Point(20, 13)
             };
             var lblDate = new Label
             {
-                Text      = DateTime.Now.ToString("ddd, MMM dd, yyyy"),
-                Font      = new Font("Segoe UI", 9f),
+                Text = DateTime.Now.ToString("ddd, MMM d, yyyy"),
+                Font = new Font("Segoe UI", 9f),
                 ForeColor = SubText,
-                AutoSize  = true
+                AutoSize = true
             };
             var btnAddTx = MakeYellowButton("+ Add Transaction", 140);
-            btnAddTx.Click += (s, e) =>
-                MessageBox.Show("Transaction logging not implemented in this demo.", "Info");
+            btnAddTx.Height = 32;
+            btnAddTx.Click += (s, e) => Form1.OpenAddTransaction(ParentForm, null);
             topBar.Controls.Add(lblTitle);
             topBar.Controls.Add(lblDate);
             topBar.Controls.Add(btnAddTx);
             topBar.Resize += (s, e) =>
             {
-                btnAddTx.Location = new Point(topBar.Width - btnAddTx.Width - 2, 6);
-                lblDate.Location  = new Point(btnAddTx.Left - lblDate.Width - 16, 14);
+                btnAddTx.Location = new Point(topBar.Width - btnAddTx.Width - 20, 13);
+                lblDate.Location = new Point(btnAddTx.Left - lblDate.Width - 30, 20);
             };
-            outer.Controls.Add(topBar);
 
+            // ── Separator ────────────────────────────────────────────
+            var separator = new Panel
+            {
+                Height = 1,
+                Dock = DockStyle.Top,
+                BackColor = Color.FromArgb(50, 60, 80)
+            };
+
+            // ── Outer scroll ─────────────────────────────────────────
+            var outer = new Panel
+            {
+                Dock = DockStyle.Fill,
+                AutoScroll = true,
+                BackColor = BgDark,
+                Padding = new Padding(18)
+            };
+
+            // Add in REVERSE order
+            Controls.Add(outer);
+            Controls.Add(separator);
+            Controls.Add(topBar);
+
+            // ── Summary row ──────────────────────────────────────────
             var summaryRow = new TableLayoutPanel
             {
-                Height      = 130,
-                Dock        = DockStyle.Top,
+                Height = 130,
+                Dock = DockStyle.Top,
                 ColumnCount = 3,
-                RowCount    = 1,
-                BackColor   = BgDark,
-                Margin      = new Padding(0, 8, 0, 0)
+                RowCount = 1,
+                BackColor = BgDark,
+                Margin = new Padding(0, 8, 0, 0)
             };
             summaryRow.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3f));
             summaryRow.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3f));
@@ -104,19 +118,20 @@ namespace CommonCents
             lblTotalPaid = new Label { ForeColor = GreenAmt };
             lblRemaining = new Label { ForeColor = Accent };
 
-            summaryRow.Controls.Add(MakeSummaryCard("TOTAL DEBT",  lblTotalDebt), 0, 0);
-            summaryRow.Controls.Add(MakeSummaryCard("TOTAL PAID",  lblTotalPaid), 1, 0);
-            summaryRow.Controls.Add(MakeSummaryCard("REMAINING",   lblRemaining), 2, 0);
+            summaryRow.Controls.Add(MakeSummaryCard("TOTAL DEBT", lblTotalDebt), 0, 0);
+            summaryRow.Controls.Add(MakeSummaryCard("TOTAL PAID", lblTotalPaid), 1, 0);
+            summaryRow.Controls.Add(MakeSummaryCard("REMAINING", lblRemaining), 2, 0);
             outer.Controls.Add(summaryRow);
 
-            var activeBar  = new Panel { Height = 40, Dock = DockStyle.Top, BackColor = BgDark };
-            var lblActive  = new Label
+            // ── Active debts bar ─────────────────────────────────────
+            var activeBar = new Panel { Height = 40, Dock = DockStyle.Top, BackColor = BgDark };
+            var lblActive = new Label
             {
-                Text      = "ACTIVE DEBTS",
-                Font      = new Font("Segoe UI", 8f, FontStyle.Bold),
+                Text = "ACTIVE DEBTS",
+                Font = new Font("Segoe UI", 8f, FontStyle.Bold),
                 ForeColor = SubText,
-                AutoSize  = true,
-                Location  = new Point(0, 12)
+                AutoSize = true,
+                Location = new Point(0, 12)
             };
             var btnAddDebt = MakeYellowButton("+ Add Debt", 110);
             btnAddDebt.Click += BtnAddDebt_Click;
@@ -128,17 +143,16 @@ namespace CommonCents
 
             pnlDebtList = new Panel
             {
-                Dock      = DockStyle.Top,
-                AutoSize  = true,
+                Dock = DockStyle.Top,
+                AutoSize = true,
                 BackColor = BgDark,
-                Padding   = new Padding(0, 4, 0, 0)
+                Padding = new Padding(0, 4, 0, 0)
             };
             outer.Controls.Add(pnlDebtList);
 
             outer.Controls.SetChildIndex(pnlDebtList, 0);
-            outer.Controls.SetChildIndex(activeBar,   1);
-            outer.Controls.SetChildIndex(summaryRow,  2);
-            outer.Controls.SetChildIndex(topBar,      3);
+            outer.Controls.SetChildIndex(activeBar, 1);
+            outer.Controls.SetChildIndex(summaryRow, 2);
         }
 
         // ── REFRESH ────────────────────────────────────────────────────

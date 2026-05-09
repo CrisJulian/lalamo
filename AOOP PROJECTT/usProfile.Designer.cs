@@ -30,29 +30,29 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(usProfile));
             panel8 = new Panel();
-            label22 = new Label();
+            lblSavingsRate = new Label();
             label19 = new Label();
             panel7 = new Panel();
-            label21 = new Label();
+            lblActiveBudgets = new Label();
             label18 = new Label();
             panel6 = new Panel();
-            label20 = new Label();
+            lblTotalTransactions = new Label();
             label17 = new Label();
             darkpanel = new Panel();
-            label15 = new Label();
+            lblInfoPhone = new TextBox();
+            lblMemberSince = new Label();
             label16 = new Label();
-            label13 = new Label();
+            lblInfoLocation = new Label();
             label14 = new Label();
-            label11 = new Label();
             label12 = new Label();
-            label9 = new Label();
+            lblInfoEmail = new Label();
             label10 = new Label();
-            label8 = new Label();
+            lblInfoFullName = new Label();
             label7 = new Label();
             label6 = new Label();
             panel4 = new Panel();
-            label5 = new Label();
-            label4 = new Label();
+            lblPersonalAccount = new Label();
+            lblUserFullName = new Label();
             darkpanel3 = new Panel();
             textBox1 = new TextBox();
             button1 = new Button();
@@ -68,16 +68,16 @@
             // panel8
             // 
             panel8.BackColor = Color.FromArgb(19, 22, 31);
-            panel8.Controls.Add(label22);
+            panel8.Controls.Add(lblSavingsRate);
             panel8.Controls.Add(label19);
             resources.ApplyResources(panel8, "panel8");
             panel8.Name = "panel8";
             // 
-            // label22
+            // lblSavingsRate
             // 
-            resources.ApplyResources(label22, "label22");
-            label22.ForeColor = Color.Gold;
-            label22.Name = "label22";
+            resources.ApplyResources(lblSavingsRate, "lblSavingsRate");
+            lblSavingsRate.ForeColor = Color.Gold;
+            lblSavingsRate.Name = "lblSavingsRate";
             // 
             // label19
             // 
@@ -88,16 +88,16 @@
             // panel7
             // 
             panel7.BackColor = Color.FromArgb(19, 22, 31);
-            panel7.Controls.Add(label21);
+            panel7.Controls.Add(lblActiveBudgets);
             panel7.Controls.Add(label18);
             resources.ApplyResources(panel7, "panel7");
             panel7.Name = "panel7";
             // 
-            // label21
+            // lblActiveBudgets
             // 
-            resources.ApplyResources(label21, "label21");
-            label21.ForeColor = Color.White;
-            label21.Name = "label21";
+            resources.ApplyResources(lblActiveBudgets, "lblActiveBudgets");
+            lblActiveBudgets.ForeColor = Color.White;
+            lblActiveBudgets.Name = "lblActiveBudgets";
             // 
             // label18
             // 
@@ -108,16 +108,16 @@
             // panel6
             // 
             panel6.BackColor = Color.FromArgb(19, 22, 31);
-            panel6.Controls.Add(label20);
+            panel6.Controls.Add(lblTotalTransactions);
             panel6.Controls.Add(label17);
             resources.ApplyResources(panel6, "panel6");
             panel6.Name = "panel6";
             // 
-            // label20
+            // lblTotalTransactions
             // 
-            resources.ApplyResources(label20, "label20");
-            label20.ForeColor = Color.White;
-            label20.Name = "label20";
+            resources.ApplyResources(lblTotalTransactions, "lblTotalTransactions");
+            lblTotalTransactions.ForeColor = Color.White;
+            lblTotalTransactions.Name = "lblTotalTransactions";
             // 
             // label17
             // 
@@ -128,26 +128,35 @@
             // darkpanel
             // 
             darkpanel.BackColor = Color.FromArgb(19, 22, 31);
-            darkpanel.Controls.Add(label15);
+            darkpanel.Controls.Add(lblInfoPhone);
+            darkpanel.Controls.Add(lblMemberSince);
             darkpanel.Controls.Add(label16);
-            darkpanel.Controls.Add(label13);
+            darkpanel.Controls.Add(lblInfoLocation);
             darkpanel.Controls.Add(label14);
-            darkpanel.Controls.Add(label11);
             darkpanel.Controls.Add(label12);
-            darkpanel.Controls.Add(label9);
+            darkpanel.Controls.Add(lblInfoEmail);
             darkpanel.Controls.Add(label10);
-            darkpanel.Controls.Add(label8);
+            darkpanel.Controls.Add(lblInfoFullName);
             darkpanel.Controls.Add(label7);
             darkpanel.Controls.Add(label6);
             darkpanel.Controls.Add(panel4);
+            darkpanel.ForeColor = Color.White;
             resources.ApplyResources(darkpanel, "darkpanel");
             darkpanel.Name = "darkpanel";
             // 
-            // label15
+            // lblInfoPhone
             // 
-            resources.ApplyResources(label15, "label15");
-            label15.ForeColor = Color.White;
-            label15.Name = "label15";
+            lblInfoPhone.BackColor = Color.FromArgb(19, 22, 31);
+            lblInfoPhone.BorderStyle = BorderStyle.None;
+            resources.ApplyResources(lblInfoPhone, "lblInfoPhone");
+            lblInfoPhone.ForeColor = Color.White;
+            lblInfoPhone.Name = "lblInfoPhone";
+            // 
+            // lblMemberSince
+            // 
+            resources.ApplyResources(lblMemberSince, "lblMemberSince");
+            lblMemberSince.ForeColor = Color.White;
+            lblMemberSince.Name = "lblMemberSince";
             // 
             // label16
             // 
@@ -155,11 +164,12 @@
             label16.ForeColor = Color.White;
             label16.Name = "label16";
             // 
-            // label13
+            // lblInfoLocation
             // 
-            resources.ApplyResources(label13, "label13");
-            label13.ForeColor = Color.White;
-            label13.Name = "label13";
+            resources.ApplyResources(lblInfoLocation, "lblInfoLocation");
+            lblInfoLocation.ForeColor = Color.White;
+            lblInfoLocation.Name = "lblInfoLocation";
+            lblInfoLocation.Click += lblInfoLocation_Click;
             // 
             // label14
             // 
@@ -167,23 +177,17 @@
             label14.ForeColor = Color.White;
             label14.Name = "label14";
             // 
-            // label11
-            // 
-            resources.ApplyResources(label11, "label11");
-            label11.ForeColor = Color.White;
-            label11.Name = "label11";
-            // 
             // label12
             // 
             resources.ApplyResources(label12, "label12");
             label12.ForeColor = Color.White;
             label12.Name = "label12";
             // 
-            // label9
+            // lblInfoEmail
             // 
-            resources.ApplyResources(label9, "label9");
-            label9.ForeColor = Color.White;
-            label9.Name = "label9";
+            resources.ApplyResources(lblInfoEmail, "lblInfoEmail");
+            lblInfoEmail.ForeColor = Color.White;
+            lblInfoEmail.Name = "lblInfoEmail";
             // 
             // label10
             // 
@@ -191,11 +195,11 @@
             label10.ForeColor = Color.White;
             label10.Name = "label10";
             // 
-            // label8
+            // lblInfoFullName
             // 
-            resources.ApplyResources(label8, "label8");
-            label8.ForeColor = Color.White;
-            label8.Name = "label8";
+            resources.ApplyResources(lblInfoFullName, "lblInfoFullName");
+            lblInfoFullName.ForeColor = Color.White;
+            lblInfoFullName.Name = "lblInfoFullName";
             // 
             // label7
             // 
@@ -212,23 +216,23 @@
             // panel4
             // 
             panel4.BackColor = Color.FromArgb(40, 35, 32);
-            panel4.Controls.Add(label5);
-            panel4.Controls.Add(label4);
+            panel4.Controls.Add(lblPersonalAccount);
+            panel4.Controls.Add(lblUserFullName);
             resources.ApplyResources(panel4, "panel4");
             panel4.Name = "panel4";
             panel4.Paint += panel4_Paint;
             // 
-            // label5
+            // lblPersonalAccount
             // 
-            resources.ApplyResources(label5, "label5");
-            label5.ForeColor = Color.White;
-            label5.Name = "label5";
+            resources.ApplyResources(lblPersonalAccount, "lblPersonalAccount");
+            lblPersonalAccount.ForeColor = Color.White;
+            lblPersonalAccount.Name = "lblPersonalAccount";
             // 
-            // label4
+            // lblUserFullName
             // 
-            resources.ApplyResources(label4, "label4");
-            label4.ForeColor = Color.White;
-            label4.Name = "label4";
+            resources.ApplyResources(lblUserFullName, "lblUserFullName");
+            lblUserFullName.ForeColor = Color.White;
+            lblUserFullName.Name = "lblUserFullName";
             // 
             // darkpanel3
             // 
@@ -255,6 +259,7 @@
             button1.ForeColor = Color.Black;
             button1.Name = "button1";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // myDateTextBox
             // 
@@ -296,32 +301,32 @@
         #endregion
 
         private Panel panel8;
-        private Label label22;
+        private Label lblSavingsRate;
         private Label label19;
         private Panel panel7;
-        private Label label21;
+        private Label lblActiveBudgets;
         private Label label18;
         private Panel panel6;
-        private Label label20;
+        private Label lblTotalTransactions;
         private Label label17;
         private Panel darkpanel;
-        private Label label15;
+        private Label lblMemberSince;
         private Label label16;
-        private Label label13;
         private Label label14;
-        private Label label11;
         private Label label12;
-        private Label label9;
+        private Label lblInfoEmail;
         private Label label10;
-        private Label label8;
+        private Label lblInfoFullName;
         private Label label7;
         private Label label6;
         private Panel panel4;
-        private Label label5;
-        private Label label4;
+        private Label lblPersonalAccount;
+        private Label lblUserFullName;
         private Panel darkpanel3;
         private Button button1;
         private TextBox myDateTextBox;
         private TextBox textBox1;
+        private TextBox lblInfoPhone;
+        private Label lblInfoLocation;
     }
 }

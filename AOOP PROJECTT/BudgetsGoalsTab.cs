@@ -51,43 +51,61 @@ namespace CommonCents
         // ── UI BUILD (unchanged from original) ─────────────────────────
         private void BuildUI()
         {
-            var scroll = new Panel
-            {
-                Dock       = DockStyle.Fill,
-                AutoScroll = true,
-                BackColor  = BgDark,
-                Padding    = new Padding(18),
-                AutoScrollMargin = new Size(0, 10)
-            };
-            Controls.Add(scroll);
-
-            var topBar   = new Panel { Height = 46, Dock = DockStyle.Top, BackColor = BgDark };
+            // ── Top bar ─────────────────────────────────────────────
+            var topBar = new Panel { Height = 55, Dock = DockStyle.Top, BackColor = BgDark };
             var lblTitle = new Label
             {
-                Text      = "Budgets && Goals",
-                Font      = new Font("Segoe UI", 16f, FontStyle.Bold),
+                Text = "Budgets && Goals",
+                Font = new Font("Segoe UI", 16f, FontStyle.Bold),
                 ForeColor = Color.White,
-                AutoSize  = true,
-                Location  = new Point(0, 8)
+                AutoSize = true,
+                Location = new Point(20, 13)
             };
             var lblDate = new Label
             {
-                Text      = DateTime.Now.ToString("ddd, MMM dd, yyyy"),
-                Font      = new Font("Segoe UI", 9f),
+                Text = DateTime.Now.ToString("ddd, MMM d, yyyy"),
+                Font = new Font("Segoe UI", 9f),
                 ForeColor = SubText,
-                AutoSize  = true
+                AutoSize = true
             };
             var btnAddTx = MakeYellowButton("+ Add Transaction", 148);
-            btnAddTx.Click += (s, e) => MessageBox.Show("Transactions tab coming soon!", "Info");
+            btnAddTx.BackColor = Color.FromArgb(245, 166, 35);
+            btnAddTx.ForeColor = Color.FromArgb(20, 20, 20);
+            btnAddTx.FlatAppearance.BorderSize = 0;
+            btnAddTx.FlatAppearance.BorderColor = Color.FromArgb(245, 166, 35);
+            btnAddTx.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 200, 30);
+            btnAddTx.Click += (s, e) => Form1.OpenAddTransaction(ParentForm, LoadFromDatabase);
             topBar.Controls.Add(lblTitle);
             topBar.Controls.Add(lblDate);
             topBar.Controls.Add(btnAddTx);
             topBar.Resize += (s, e) =>
             {
-                btnAddTx.Location = new Point(topBar.Width - btnAddTx.Width - 2, 6);
-                lblDate.Location  = new Point(btnAddTx.Left - lblDate.Width - 16, 14);
+                btnAddTx.Location = new Point(topBar.Width - btnAddTx.Width - 20, 13);
+                lblDate.Location = new Point(btnAddTx.Left - lblDate.Width - 30, 20);
             };
-            scroll.Controls.Add(topBar);
+
+            // ── Separator ────────────────────────────────────────────
+            var separator = new Panel
+            {
+                Height = 1,
+                Dock = DockStyle.Top,
+                BackColor = Color.FromArgb(50, 60, 80)
+            };
+
+            // ── Scroll ───────────────────────────────────────────────
+            var scroll = new Panel
+            {
+                Dock = DockStyle.Fill,
+                AutoScroll = true,
+                BackColor = BgDark,
+                Padding = new Padding(18),
+                AutoScrollMargin = new Size(0, 10)
+            };
+
+            // Add in REVERSE order
+            Controls.Add(scroll);
+            Controls.Add(separator);
+            Controls.Add(topBar);
 
             var budgetSection = BuildSection(
                 "BUDGET CATEGORIES — " + DateTime.Now.ToString("MMMM yyyy").ToUpper(),
@@ -108,10 +126,9 @@ namespace CommonCents
             goalsSection.Margin = new Padding(0, 24, 0, 0);
             scroll.Controls.Add(goalsSection);
 
-            scroll.Controls.SetChildIndex(goalsSection,  0);
+            scroll.Controls.SetChildIndex(goalsSection, 0);
             scroll.Controls.SetChildIndex(spacer, 1);
             scroll.Controls.SetChildIndex(budgetSection, 2);
-            scroll.Controls.SetChildIndex(topBar,        3);
         }
 
         private Panel BuildSection(string title, string btnLabel,
@@ -497,16 +514,16 @@ namespace CommonCents
             var b = new Button
             {
                 Text      = text,
-                BackColor = Color.FromArgb(230, 170, 0),
-                ForeColor = Color.FromArgb(20, 20, 20),
+                BackColor = Color.Transparent,
+                ForeColor = Color.FromArgb(230, 170, 0),
                 FlatStyle = FlatStyle.Flat,
                 Height    = 30,
                 Width     = width,
-                Font      = new Font("Segoe UI", 9f, FontStyle.Bold),
+                Font      = new Font("Segoe UI", 10f, FontStyle.Bold),
                 Cursor    = Cursors.Hand
             };
-            b.FlatAppearance.BorderSize          = 0;
-            b.FlatAppearance.MouseOverBackColor  = Color.FromArgb(255, 200, 30);
+            b.FlatAppearance.BorderColor = Color.FromArgb(230, 170, 0);        // 👈 yellow border
+            b.FlatAppearance.MouseOverBackColor = Color.FromArgb(30, 230, 170, 0);
             b.Paint += (s, e) =>
             {
                 e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;

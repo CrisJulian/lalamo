@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             LeftSidePanel = new Panel();
             button9 = new Button();
             button8 = new Button();
@@ -50,7 +51,6 @@
             // LeftSidePanel
             // 
             LeftSidePanel.BackColor = Color.FromArgb(19, 22, 31);
-            LeftSidePanel.BorderStyle = BorderStyle.Fixed3D;
             LeftSidePanel.Controls.Add(button9);
             LeftSidePanel.Controls.Add(button8);
             LeftSidePanel.Controls.Add(button7);
@@ -65,11 +65,12 @@
             LeftSidePanel.Name = "LeftSidePanel";
             LeftSidePanel.Size = new Size(183, 654);
             LeftSidePanel.TabIndex = 0;
+            LeftSidePanel.Paint += LeftSidePanel_Paint;
             // 
             // button9
             // 
             button9.FlatAppearance.BorderSize = 0;
-            button9.FlatStyle = FlatStyle.Popup;
+            button9.FlatStyle = FlatStyle.Flat;
             button9.Font = new Font("Segoe UI", 12F);
             button9.ForeColor = Color.White;
             button9.Location = new Point(-1, 608);
@@ -182,51 +183,53 @@
             // 
             panel6.BackColor = Color.Transparent;
             panel6.BackgroundImageLayout = ImageLayout.None;
-            panel6.BorderStyle = BorderStyle.FixedSingle;
             panel6.Controls.Add(label2);
             panel6.Controls.Add(label1);
             panel6.Controls.Add(pictureBox1);
-            panel6.Location = new Point(-10, -4);
+            panel6.Location = new Point(-1, 3);
             panel6.Name = "panel6";
-            panel6.Size = new Size(192, 77);
+            panel6.Size = new Size(183, 70);
             panel6.TabIndex = 5;
+            panel6.Paint += panel6_Paint;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Microsoft Sans Serif", 9F);
-            label2.ForeColor = Color.Gray;
-            label2.Location = new Point(75, 36);
+            label2.Font = new Font("Microsoft Sans Serif", 8F);
+            label2.ForeColor = Color.FromArgb(130, 145, 170);
+            label2.Location = new Point(76, 40);
             label2.Name = "label2";
-            label2.Size = new Size(56, 15);
+            label2.Size = new Size(48, 13);
             label2.TabIndex = 14;
             label2.Text = "Personal";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Microsoft Sans Serif", 11F);
+            label1.Font = new Font("Microsoft Sans Serif", 13F);
             label1.Location = new Point(75, 18);
             label1.Name = "label1";
-            label1.Size = new Size(52, 18);
+            label1.Size = new Size(62, 22);
             label1.TabIndex = 0;
             label1.Text = "Name ";
             // 
             // pictureBox1
             // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(14, 10);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(55, 53);
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // rightsidepanel
             // 
             rightsidepanel.BackColor = Color.FromArgb(15, 17, 23);
             rightsidepanel.ForeColor = Color.Crimson;
-            rightsidepanel.Location = new Point(182, 1);
+            rightsidepanel.Location = new Point(183, 0);
             rightsidepanel.Name = "rightsidepanel";
-            rightsidepanel.Size = new Size(967, 653);
+            rightsidepanel.Size = new Size(966, 653);
             rightsidepanel.TabIndex = 1;
             rightsidepanel.Paint += rightsidepanel_Paint;
             // 

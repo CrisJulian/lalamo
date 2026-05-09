@@ -28,4 +28,13 @@
     </EmbeddedResource>
   </ItemGroup>
 
+  <ItemGroup>
+	<Compile Update="AddTransactionForm.Designer.cs">
+		<DependentUpon>AddTransactionForm.cs</DependentUpon>
+		</Compile>
+		<EmbeddedResource Update="AddTransactionForm.resx">
+			<DependentUpon>AddTransactionForm.cs</DependentUpon>
+		</EmbeddedResource>
+	</ItemGroup>	
+	
 </Project>

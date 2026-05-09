@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            label2 = new Label();
             label3 = new Label();
             txtDescription = new TextBox();
             txtAmount = new TextBox();
@@ -55,15 +54,6 @@
             label1.TabIndex = 0;
             label1.Text = "Add Transaction";
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(0, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(38, 15);
-            label2.TabIndex = 1;
-            label2.Text = "label2";
-            // 
             // label3
             // 
             label3.AutoSize = true;
@@ -77,23 +67,28 @@
             // txtDescription
             // 
             txtDescription.BackColor = Color.FromArgb(15, 17, 23);
-            txtDescription.BorderStyle = BorderStyle.FixedSingle;
+            txtDescription.BorderStyle = BorderStyle.None;
             txtDescription.Location = new Point(18, 100);
             txtDescription.Multiline = true;
             txtDescription.Name = "txtDescription";
             txtDescription.Size = new Size(359, 30);
             txtDescription.TabIndex = 3;
-            txtDescription.TextChanged += textBox1_TextChanged;
+            txtDescription.TextChanged += txtDescription_TextChanged;
+            txtDescription.Enter += txtDescription_Enter;
+            txtDescription.Leave += txtDescription_Leave;
             // 
             // txtAmount
             // 
             txtAmount.BackColor = Color.FromArgb(15, 17, 23);
-            txtAmount.BorderStyle = BorderStyle.FixedSingle;
+            txtAmount.BorderStyle = BorderStyle.None;
             txtAmount.Location = new Point(18, 179);
             txtAmount.Multiline = true;
             txtAmount.Name = "txtAmount";
             txtAmount.Size = new Size(164, 30);
             txtAmount.TabIndex = 5;
+            txtAmount.TextChanged += txtAmount_TextChanged;
+            txtAmount.Enter += txtAmount_Enter;
+            txtAmount.Leave += txtAmount_Leave;
             // 
             // label4
             // 
@@ -215,7 +210,6 @@
             Controls.Add(label4);
             Controls.Add(txtDescription);
             Controls.Add(label3);
-            Controls.Add(label2);
             Controls.Add(label1);
             Name = "AddTransactionForm";
             Text = "AddTransactionForm";
@@ -227,7 +221,6 @@
         #endregion
 
         private Label label1;
-        private Label label2;
         private Label label3;
         private TextBox txtDescription;
         private TextBox txtAmount;

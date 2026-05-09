@@ -43,7 +43,6 @@
             label5 = new Label();
             label4 = new Label();
             panel1 = new Panel();
-            panel6 = new Panel();
             panel7 = new Panel();
             label10 = new Label();
             button1 = new Button();
@@ -53,14 +52,12 @@
             panel3.SuspendLayout();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
-            panel6.SuspendLayout();
             panel7.SuspendLayout();
             SuspendLayout();
             // 
             // panel5
             // 
             panel5.BackColor = Color.FromArgb(24, 28, 38);
-            panel5.BorderStyle = BorderStyle.FixedSingle;
             panel5.Controls.Add(label9);
             panel5.Location = new Point(491, 359);
             panel5.Name = "panel5";
@@ -82,7 +79,6 @@
             // panel4
             // 
             panel4.BackColor = Color.FromArgb(24, 28, 38);
-            panel4.BorderStyle = BorderStyle.FixedSingle;
             panel4.Controls.Add(label8);
             panel4.Location = new Point(25, 359);
             panel4.Name = "panel4";
@@ -103,7 +99,6 @@
             // panel3
             // 
             panel3.BackColor = Color.FromArgb(24, 28, 38);
-            panel3.BorderStyle = BorderStyle.FixedSingle;
             panel3.Controls.Add(label3);
             panel3.Controls.Add(label2);
             panel3.Controls.Add(label1);
@@ -161,10 +156,8 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(24, 28, 38);
-            panel2.BorderStyle = BorderStyle.FixedSingle;
             panel2.Controls.Add(label7);
             panel2.Controls.Add(label6);
-            panel2.Controls.Add(label5);
             panel2.Controls.Add(label4);
             panel2.Location = new Point(491, 82);
             panel2.Name = "panel2";
@@ -200,7 +193,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 30F, FontStyle.Bold);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(14, 36);
+            label5.Location = new Point(505, 104);
             label5.Name = "label5";
             label5.Size = new Size(151, 54);
             label5.TabIndex = 9;
@@ -219,54 +212,46 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(15, 17, 23);
+            panel1.Controls.Add(panel7);
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(panel3);
             panel1.Controls.Add(panel4);
             panel1.Controls.Add(panel5);
-            panel1.Controls.Add(panel6);
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(963, 649);
             panel1.TabIndex = 6;
             panel1.Paint += panel1_Paint;
             // 
-            // panel6
-            // 
-            panel6.BackColor = Color.Transparent;
-            panel6.BorderStyle = BorderStyle.FixedSingle;
-            panel6.Controls.Add(panel7);
-            panel6.Location = new Point(0, 0);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(964, 55);
-            panel6.TabIndex = 6;
-            // 
             // panel7
             // 
             panel7.Controls.Add(label10);
             panel7.Controls.Add(button1);
+            panel7.Controls.Add(label5);
             panel7.Controls.Add(myDateTextBox);
             panel7.Location = new Point(0, 0);
             panel7.Name = "panel7";
-            panel7.Size = new Size(962, 54);
+            panel7.Size = new Size(963, 55);
             panel7.TabIndex = 3;
             panel7.Paint += panel7_Paint;
             // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Font = new Font("SimSun", 15F);
+            label10.Font = new Font("SimSun", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label10.ForeColor = Color.White;
             label10.Location = new Point(30, 19);
             label10.Name = "label10";
-            label10.Size = new Size(99, 20);
+            label10.Size = new Size(108, 20);
             label10.TabIndex = 4;
             label10.Text = "Dashboard";
+            label10.Click += label10_Click_1;
             // 
             // button1
             // 
             button1.BackColor = Color.FromArgb(245, 166, 35);
             button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 10F);
+            button1.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             button1.ForeColor = Color.Black;
             button1.Location = new Point(769, 10);
             button1.Name = "button1";
@@ -281,7 +266,7 @@
             myDateTextBox.BackColor = Color.FromArgb(15, 17, 23);
             myDateTextBox.BorderStyle = BorderStyle.None;
             myDateTextBox.Font = new Font("Microsoft Sans Serif", 10F);
-            myDateTextBox.ForeColor = Color.Gray;
+            myDateTextBox.ForeColor = Color.FromArgb(130, 145, 170);
             myDateTextBox.Location = new Point(643, 20);
             myDateTextBox.Name = "myDateTextBox";
             myDateTextBox.Size = new Size(297, 16);
@@ -305,7 +290,6 @@
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             panel1.ResumeLayout(false);
-            panel6.ResumeLayout(false);
             panel7.ResumeLayout(false);
             panel7.PerformLayout();
             ResumeLayout(false);
@@ -318,7 +302,6 @@
         private Panel panel3;
         private Panel panel2;
         private Panel panel1;
-        private Panel panel6;
         private Panel panel7;
         private Button button1;
         private TextBox myDateTextBox;
