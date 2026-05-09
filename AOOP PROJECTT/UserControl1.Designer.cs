@@ -87,12 +87,12 @@
             // 
             label9.AutoSize = true;
             label9.BackColor = Color.FromArgb(24, 28, 38);
-            label9.Font = new Font("Segoe UI", 15F);
+            label9.Font = new Font("Microsoft Sans Serif", 20F);
             label9.ForeColor = Color.DarkGray;
             label9.ImageAlign = ContentAlignment.MiddleLeft;
-            label9.Location = new Point(27, 84);
+            label9.Location = new Point(23, 76);
             label9.Name = "label9";
-            label9.Size = new Size(39, 28);
+            label9.Size = new Size(46, 31);
             label9.TabIndex = 6;
             label9.Text = "ℹ️";
             label9.Click += label9_Click;
@@ -121,6 +121,7 @@
             panel8.Name = "panel8";
             panel8.Size = new Size(409, 134);
             panel8.TabIndex = 13;
+            panel8.Paint += panel8_Paint;
             // 
             // panel10
             // 
@@ -131,12 +132,13 @@
             panel10.Name = "panel10";
             panel10.Size = new Size(406, 63);
             panel10.TabIndex = 12;
+            panel10.Paint += panel10_Paint;
             // 
             // label15
             // 
             label15.AutoSize = true;
             label15.Font = new Font("SimSun", 9.75F);
-            label15.ForeColor = Color.DimGray;
+            label15.ForeColor = Color.FromArgb(130, 145, 170);
             label15.Location = new Point(24, 39);
             label15.Name = "label15";
             label15.Size = new Size(168, 13);
@@ -148,7 +150,7 @@
             label16.AutoSize = true;
             label16.BackColor = Color.FromArgb(24, 28, 38);
             label16.Font = new Font("SimSun", 9.75F);
-            label16.ForeColor = Color.DimGray;
+            label16.ForeColor = Color.FromArgb(130, 145, 170);
             label16.Location = new Point(24, 13);
             label16.Name = "label16";
             label16.Size = new Size(42, 13);
@@ -159,7 +161,7 @@
             // 
             label10.AutoSize = true;
             label10.Font = new Font("SimSun", 9.75F);
-            label10.ForeColor = Color.DimGray;
+            label10.ForeColor = Color.FromArgb(130, 145, 170);
             label10.Location = new Point(72, 105);
             label10.Name = "label10";
             label10.Size = new Size(146, 13);
@@ -203,7 +205,7 @@
             label8.AutoSize = true;
             label8.BackColor = Color.FromArgb(24, 28, 38);
             label8.Font = new Font("SimSun", 9.75F);
-            label8.ForeColor = Color.DimGray;
+            label8.ForeColor = Color.FromArgb(130, 145, 170);
             label8.Location = new Point(24, 13);
             label8.Name = "label8";
             label8.Size = new Size(56, 13);
@@ -224,7 +226,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("SimSun", 9.75F);
-            label7.ForeColor = Color.DimGray;
+            label7.ForeColor = Color.FromArgb(130, 145, 170);
             label7.Location = new Point(24, 39);
             label7.Name = "label7";
             label7.Size = new Size(196, 13);
@@ -291,7 +293,7 @@
             // 
             label30.AutoSize = true;
             label30.Font = new Font("SimSun", 9.75F);
-            label30.ForeColor = Color.DimGray;
+            label30.ForeColor = Color.FromArgb(130, 145, 170);
             label30.Location = new Point(20, 236);
             label30.Name = "label30";
             label30.Size = new Size(238, 13);
@@ -314,7 +316,7 @@
             // 
             label28.AutoSize = true;
             label28.Font = new Font("SimSun", 9.75F);
-            label28.ForeColor = Color.DimGray;
+            label28.ForeColor = Color.FromArgb(130, 145, 170);
             label28.Location = new Point(20, 162);
             label28.Name = "label28";
             label28.Size = new Size(168, 13);
@@ -337,7 +339,7 @@
             // 
             label27.AutoSize = true;
             label27.Font = new Font("SimSun", 9.75F);
-            label27.ForeColor = Color.DimGray;
+            label27.ForeColor = Color.FromArgb(130, 145, 170);
             label27.Location = new Point(20, 94);
             label27.Name = "label27";
             label27.Size = new Size(238, 13);
@@ -372,12 +374,12 @@
             // 
             label11.AutoSize = true;
             label11.BackColor = Color.FromArgb(24, 28, 38);
-            label11.Font = new Font("Segoe UI", 15F);
+            label11.Font = new Font("Microsoft Sans Serif", 20F);
             label11.ForeColor = Color.FromArgb(255, 128, 0);
             label11.ImageAlign = ContentAlignment.MiddleLeft;
-            label11.Location = new Point(28, 82);
+            label11.Location = new Point(25, 82);
             label11.Name = "label11";
-            label11.Size = new Size(39, 28);
+            label11.Size = new Size(46, 31);
             label11.TabIndex = 6;
             label11.Text = "🔓";
             label11.Click += label11_Click;
@@ -386,7 +388,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("SimSun", 9.75F);
-            label6.ForeColor = Color.DimGray;
+            label6.ForeColor = Color.FromArgb(130, 145, 170);
             label6.Location = new Point(72, 105);
             label6.Name = "label6";
             label6.Size = new Size(175, 13);
@@ -416,6 +418,7 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(409, 134);
             panel3.TabIndex = 9;
+            panel3.Paint += panel3_Paint;
             // 
             // label2
             // 
@@ -445,17 +448,18 @@
             panel4.Name = "panel4";
             panel4.Size = new Size(409, 220);
             panel4.TabIndex = 10;
+            panel4.Paint += panel4_Paint;
             // 
             // label13
             // 
             label13.AutoSize = true;
             label13.BackColor = Color.FromArgb(24, 28, 38);
-            label13.Font = new Font("Segoe UI", 15F);
+            label13.Font = new Font("Microsoft Sans Serif", 20F);
             label13.ForeColor = Color.FromArgb(192, 0, 0);
             label13.ImageAlign = ContentAlignment.MiddleLeft;
-            label13.Location = new Point(26, 164);
+            label13.Location = new Point(17, 161);
             label13.Name = "label13";
-            label13.Size = new Size(39, 28);
+            label13.Size = new Size(46, 31);
             label13.TabIndex = 15;
             label13.Text = "🔓";
             label13.Click += label13_Click;
@@ -464,12 +468,12 @@
             // 
             label20.AutoSize = true;
             label20.BackColor = Color.FromArgb(24, 28, 38);
-            label20.Font = new Font("Segoe UI", 15F);
+            label20.Font = new Font("Microsoft Sans Serif", 20F);
             label20.ForeColor = Color.White;
             label20.ImageAlign = ContentAlignment.MiddleLeft;
-            label20.Location = new Point(25, 108);
+            label20.Location = new Point(14, 100);
             label20.Name = "label20";
-            label20.Size = new Size(39, 28);
+            label20.Size = new Size(46, 31);
             label20.TabIndex = 12;
             label20.Text = "💿";
             label20.Click += label20_Click;
@@ -478,7 +482,7 @@
             // 
             label23.AutoSize = true;
             label23.Font = new Font("SimSun", 9.75F);
-            label23.ForeColor = Color.DimGray;
+            label23.ForeColor = Color.FromArgb(130, 145, 170);
             label23.Location = new Point(63, 190);
             label23.Name = "label23";
             label23.Size = new Size(217, 13);
@@ -501,7 +505,7 @@
             // 
             label21.AutoSize = true;
             label21.Font = new Font("SimSun", 9.75F);
-            label21.ForeColor = Color.DimGray;
+            label21.ForeColor = Color.FromArgb(130, 145, 170);
             label21.Location = new Point(63, 131);
             label21.Name = "label21";
             label21.Size = new Size(175, 13);
@@ -524,12 +528,12 @@
             // 
             label17.AutoSize = true;
             label17.BackColor = Color.FromArgb(24, 28, 38);
-            label17.Font = new Font("Segoe UI", 15F);
+            label17.Font = new Font("Microsoft Sans Serif", 20F);
             label17.ForeColor = Color.White;
             label17.ImageAlign = ContentAlignment.MiddleLeft;
-            label17.Location = new Point(25, 49);
+            label17.Location = new Point(14, 40);
             label17.Name = "label17";
-            label17.Size = new Size(39, 28);
+            label17.Size = new Size(46, 31);
             label17.TabIndex = 9;
             label17.Text = "📤";
             label17.Click += label17_Click;
@@ -538,7 +542,7 @@
             // 
             label18.AutoSize = true;
             label18.Font = new Font("SimSun", 9.75F);
-            label18.ForeColor = Color.DimGray;
+            label18.ForeColor = Color.FromArgb(130, 145, 170);
             label18.Location = new Point(72, 75);
             label18.Name = "label18";
             label18.Size = new Size(231, 13);
@@ -587,7 +591,7 @@
             myDateTextBox.BackColor = Color.FromArgb(15, 17, 23);
             myDateTextBox.BorderStyle = BorderStyle.None;
             myDateTextBox.Font = new Font("Microsoft Sans Serif", 10F);
-            myDateTextBox.ForeColor = Color.Gray;
+            myDateTextBox.ForeColor = Color.FromArgb(130, 145, 170);
             myDateTextBox.Location = new Point(642, 17);
             myDateTextBox.Name = "myDateTextBox";
             myDateTextBox.Size = new Size(297, 16);
@@ -609,7 +613,7 @@
             label14.AutoSize = true;
             label14.BackColor = Color.FromArgb(24, 28, 38);
             label14.Font = new Font("SimSun", 9.75F);
-            label14.ForeColor = Color.DimGray;
+            label14.ForeColor = Color.FromArgb(130, 145, 170);
             label14.Location = new Point(24, 13);
             label14.Name = "label14";
             label14.Size = new Size(112, 13);

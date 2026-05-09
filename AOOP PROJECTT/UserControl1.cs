@@ -18,6 +18,132 @@ namespace WinFormsApp1
             InitializeComponent();
             myDateTextBox.Text = DateTime.Now.ToString("ddd, MMM d, yyyy"); // 👈 add this
             myDateTextBox.ReadOnly = true; // 👈 add this too so it can't be edited
+            ApplyIconBadges();
+            AddRoundedBorders();
+        }
+
+        private void ApplyIconBadges()
+        {
+            // LOGIN — orange circle with L
+            label11.Text = "L";
+            label11.Font = new Font("Segoe UI", 11f, FontStyle.Bold);
+            label11.ForeColor = Color.White;
+            label11.BackColor = Color.FromArgb(255, 128, 0);
+            label11.Size = new Size(36, 36);
+            label11.TextAlign = ContentAlignment.MiddleCenter;
+            label11.AutoSize = false;
+            MakeCircle(label11);
+
+            // EXPORT DATA — white circle with ED
+            label17.Text = "ED";
+            label17.Font = new Font("Segoe UI", 9f, FontStyle.Bold);
+            label17.ForeColor = Color.FromArgb(24, 28, 38);
+            label17.BackColor = Color.White;
+            label17.Size = new Size(36, 36);
+            label17.TextAlign = ContentAlignment.MiddleCenter;
+            label17.AutoSize = false;
+            MakeCircle(label17);
+
+            // BACKUP DATA — white circle with BD
+            label20.Text = "BD";
+            label20.Font = new Font("Segoe UI", 9f, FontStyle.Bold);
+            label20.ForeColor = Color.FromArgb(24, 28, 38);
+            label20.BackColor = Color.White;
+            label20.Size = new Size(36, 36);
+            label20.TextAlign = ContentAlignment.MiddleCenter;
+            label20.AutoSize = false;
+            MakeCircle(label20);
+
+            // CLEAR ALL DATA — red circle with CLD
+            label13.Text = "CLD";
+            label13.Font = new Font("Segoe UI", 8f, FontStyle.Bold);
+            label13.ForeColor = Color.White;
+            label13.BackColor = Color.FromArgb(192, 0, 0);
+            label13.Size = new Size(36, 36);
+            label13.TextAlign = ContentAlignment.MiddleCenter;
+            label13.AutoSize = false;
+            MakeCircle(label13);
+
+            // APP VERSION — grey square with APV
+            label9.Text = "APV";
+            label9.Font = new Font("Segoe UI", 8f, FontStyle.Bold);
+            label9.ForeColor = Color.White;
+            label9.BackColor = Color.FromArgb(90, 95, 110);
+            label9.Size = new Size(36, 36);
+            label9.TextAlign = ContentAlignment.MiddleCenter;
+            label9.AutoSize = false;
+            // No MakeCircle call = stays as square
+        }
+
+        private void AddRoundedBorders()
+        {
+            UIHelper.ApplyRoundedStyle(panel3);
+            UIHelper.ApplyRoundedStyle(panel4);
+            UIHelper.ApplyRoundedStyle(panel8);
+            UIHelper.ApplyRoundedStyle(panel6);
+        }
+
+        private void MakeCircle(Label lbl)
+        {
+            Color circleColor = lbl.BackColor;
+            Color textColor = lbl.ForeColor;
+            string text = lbl.Text;
+            Font font = lbl.Font;
+
+            lbl.Text = "";  // Clear text so label doesn't draw it
+            lbl.BackColor = lbl.Parent?.BackColor ?? Color.FromArgb(24, 28, 38);
+
+            lbl.Paint += (s, e) =>
+            {
+                e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+
+                // Draw circle
+                using var brush = new SolidBrush(circleColor);
+                e.Graphics.FillEllipse(brush, 0, 0, lbl.Width - 1, lbl.Height - 1);
+
+                // Draw text centered
+                var sf = new StringFormat
+                {
+                    Alignment = StringAlignment.Center,
+                    LineAlignment = StringAlignment.Center
+                };
+                using var textBrush = new SolidBrush(textColor);
+                e.Graphics.DrawString(text, font, textBrush,
+                    new RectangleF(0, 0, lbl.Width, lbl.Height), sf);
+            };
+
+            lbl.Invalidate();
+        }
+
+        private void MakeSquare(Label lbl)
+        {
+            Color squareColor = lbl.BackColor;
+            Color textColor = lbl.ForeColor;
+            string text = lbl.Text;
+            Font font = lbl.Font;
+
+            lbl.Text = "";
+            lbl.BackColor = lbl.Parent?.BackColor ?? Color.FromArgb(24, 28, 38);
+
+            lbl.Paint += (s, e) =>
+            {
+                e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+
+                // Draw rounded square
+                using var brush = new SolidBrush(squareColor);
+                e.Graphics.FillRoundedRectangle(brush, 0, 0, lbl.Width - 1, lbl.Height - 1, 6);
+
+                var sf = new StringFormat
+                {
+                    Alignment = StringAlignment.Center,
+                    LineAlignment = StringAlignment.Center
+                };
+                using var textBrush = new SolidBrush(textColor);
+                e.Graphics.DrawString(text, font, textBrush,
+                    new RectangleF(0, 0, lbl.Width, lbl.Height), sf);
+            };
+
+            lbl.Invalidate();
         }
 
         private void UserControl1_Load(object sender, EventArgs e)
@@ -149,6 +275,26 @@ namespace WinFormsApp1
         }
 
         private void myDateTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel10_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel8_Paint(object sender, PaintEventArgs e)
         {
 
         }

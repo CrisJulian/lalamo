@@ -137,7 +137,6 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(903, 44);
             panel3.TabIndex = 0;
-            panel3.Paint += panel3_Paint;
             // 
             // lblFrequency
             // 
@@ -211,7 +210,6 @@
             pnlRecurringList.Size = new Size(903, 396);
             pnlRecurringList.TabIndex = 7;
             pnlRecurringList.WrapContents = false;
-            pnlRecurringList.Paint += pnlRecurringList_Paint;
             // 
             // panel7
             // 
@@ -223,7 +221,6 @@
             panel7.Name = "panel7";
             panel7.Size = new Size(957, 55);
             panel7.TabIndex = 8;
-            panel7.Paint += panel7_Paint;
             // 
             // label5
             // 
