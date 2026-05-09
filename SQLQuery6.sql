@@ -1,0 +1,2 @@
+﻿ALTER TABLE Transactions
+ADD Category NVARCHAR(100) NULL;

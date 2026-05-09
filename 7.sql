@@ -1,0 +1,1 @@
+﻿SELECT * FROM dbo.Users WHERE UserId = 99;

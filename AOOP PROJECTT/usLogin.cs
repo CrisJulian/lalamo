@@ -130,9 +130,77 @@ namespace AOOP_PROJECTT
 
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
+        private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void usLogin_Load(object sender, EventArgs e)
+        {
+            panelDemo.Paint += (s, e) =>
+            {
+                using var pen = new Pen(Color.Gray, 1f);
+                e.Graphics.DrawRectangle(pen, 0, 0, panelDemo.Width - 1, panelDemo.Height - 1);
+            };
+            panelDemo.BackColor = Color.Transparent;
+        }
+
+        private void panelDemo_Paint(object sender, PaintEventArgs e)
+        {
+            panelDemo.Paint += (s, e) =>
+            {
+                using var pen = new Pen(Color.Gray, 1f);
+                e.Graphics.DrawRectangle(pen, 0, 0, panelDemo.Width - 1, panelDemo.Height - 1);
+            };
+            panelDemo.BackColor = Color.Transparent;
+        }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label15_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label16_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label17_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            SessionManager.UserId = 99;
+            SessionManager.FullName = "Demo User";
+            SessionManager.Email = "demo@example.com";
+            SessionManager.AccountType = "PERSONAL";
+            SessionManager.Phone = "";
+            SessionManager.Location = "";
+            SessionManager.MemberSince = DateTime.Now;
+
+            LoginSuccessful?.Invoke(this, EventArgs.Empty);
         }
     }
 }
