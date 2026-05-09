@@ -99,7 +99,7 @@
             // 
             button2.BackColor = Color.FromArgb(245, 166, 35);
             button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Segoe UI", 10F);
+            button2.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             button2.ForeColor = Color.Black;
             button2.Location = new Point(782, 100);
             button2.Name = "button2";
@@ -164,7 +164,7 @@
             lblCategory.AutoSize = true;
             lblCategory.Font = new Font("SimSun", 12F);
             lblCategory.ForeColor = Color.FromArgb(130, 145, 170);
-            lblCategory.Location = new Point(709, 14);
+            lblCategory.Location = new Point(727, 14);
             lblCategory.Margin = new Padding(0);
             lblCategory.Name = "lblCategory";
             lblCategory.Size = new Size(71, 16);
@@ -201,7 +201,7 @@
             lblAmount.AutoSize = true;
             lblAmount.Font = new Font("SimSun", 12F);
             lblAmount.ForeColor = Color.FromArgb(130, 145, 170);
-            lblAmount.Location = new Point(378, 14);
+            lblAmount.Location = new Point(372, 14);
             lblAmount.Margin = new Padding(0);
             lblAmount.Name = "lblAmount";
             lblAmount.Size = new Size(55, 16);

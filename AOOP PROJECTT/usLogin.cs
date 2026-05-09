@@ -207,5 +207,10 @@ namespace AOOP_PROJECTT
         {
 
         }
+
+        private void label18_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

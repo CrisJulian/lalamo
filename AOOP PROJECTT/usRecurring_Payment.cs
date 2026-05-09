@@ -37,8 +37,11 @@ namespace AOOP_PROJECTT
             newRow.lblName.Text = payment.Name;
             newRow.lblAmount.Text = "₱" + payment.Amount.ToString("N2");
             newRow.lblFrequency.Text = payment.Frequency;
-            newRow.lblNextDate.Text = payment.NextDate.ToString("MM/dd/yyyy");
+            newRow.lblNextDate.Text = payment.NextDate.ToString("MMM d, yyyy");
             newRow.lblCategory.Text = payment.Category;
+
+            // 👈 Add this line
+            newRow.ApplyStyles(payment.NextDate, payment.Category);
 
             newRow.RowDeleted += (s, ev) =>
             {
