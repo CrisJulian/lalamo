@@ -148,6 +148,7 @@
             panel2.Controls.Add(label7);
             panel2.Controls.Add(label6);
             panel2.Controls.Add(label4);
+            panel2.Controls.Add(label5);
             panel2.Location = new Point(491, 82);
             panel2.Name = "panel2";
             panel2.Size = new Size(446, 254);
@@ -192,7 +193,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 30F, FontStyle.Bold);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(505, 104);
+            label5.Location = new Point(19, 42);
             label5.Name = "label5";
             label5.Size = new Size(151, 54);
             label5.TabIndex = 9;
@@ -216,7 +217,6 @@
             // 
             panel7.Controls.Add(label10);
             panel7.Controls.Add(button1);
-            panel7.Controls.Add(label5);
             panel7.Controls.Add(myDateTextBox);
             panel7.Location = new Point(0, 0);
             panel7.Name = "panel7";

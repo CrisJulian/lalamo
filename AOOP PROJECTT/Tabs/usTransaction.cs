@@ -66,11 +66,10 @@ namespace AOOP_PROJECTT
             usTransactionRow row = new usTransactionRow();
             row.SetTransactionData(0, date, desc, cat, type, amount);
             flowLayoutPanel1.Controls.Add(row);
-            flowLayoutPanel1.Controls.SetChildIndex(row, 0); // Keeps newest at the top
+            flowLayoutPanel1.Controls.SetChildIndex(row, 0); 
             UpdateResultCount();
         }
 
-        // --- UPDATED MASTER FILTER ---
         private void FilterTransactions()
         {
             string search = txtSearch.Text.ToLower().Trim();
@@ -101,7 +100,6 @@ namespace AOOP_PROJECTT
             UpdateResultCount();
         }
 
-        // --- EXISTING LOGIC CONNECTED TO CONTROLS ---
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             FilterTransactions();
@@ -122,7 +120,6 @@ namespace AOOP_PROJECTT
             Form1.OpenAddTransaction(ParentForm, LoadTransactionsFromDb);
         }
 
-        // --- NEW BUTTON CLICK METHODS (Link these in the Designer) ---
         public void btnAll_Click(object sender, EventArgs e)
         {
             activeTypeFilter = "All";
@@ -141,7 +138,6 @@ namespace AOOP_PROJECTT
             FilterTransactions();
         }
 
-        // --- KEEPING THESE TO PREVENT DESIGNER ERRORS ---
         private void button2_Click(object sender, EventArgs e) { }
         private void lblResultsCount_Click(object sender, EventArgs e) { }
         private void label1_Click(object sender, EventArgs e) { }

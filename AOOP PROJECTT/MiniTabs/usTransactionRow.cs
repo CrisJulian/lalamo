@@ -83,12 +83,8 @@ namespace AOOP_PROJECTT
             deleteBtn.Location = new Point(btnDelete.Location.X, 8);
             deleteBtn.Click += (s, ev) =>
             {
-                var confirm = MessageBox.Show("Delete this transaction?", "Confirm", MessageBoxButtons.YesNo);
-                if (confirm == DialogResult.Yes)
-                {
-                    TransactionRepository.DeleteTransaction(_transactionId);
-                    this.Parent?.Controls.Remove(this);
-                }
+                TransactionRepository.DeleteTransaction(_transactionId);
+                this.Parent?.Controls.Remove(this);
             };
             Controls.Add(deleteBtn);
             deleteBtn.BringToFront();
@@ -101,12 +97,8 @@ namespace AOOP_PROJECTT
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            var confirm = MessageBox.Show("Delete this transaction?", "Confirm", MessageBoxButtons.YesNo);
-            if (confirm == DialogResult.Yes)
-            {
-                TransactionRepository.DeleteTransaction(_transactionId);
-                this.Parent?.Controls.Remove(this);
-            }
+           TransactionRepository.DeleteTransaction(_transactionId);
+           this.Parent?.Controls.Remove(this);
         }
     }
 }

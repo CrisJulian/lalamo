@@ -222,15 +222,15 @@ namespace AOOP_PROJECTT.Tabs
         {
             var card = new Panel
             {
-                Dock      = DockStyle.Fill,
+                Dock = DockStyle.Fill,
                 BackColor = CardBg,
-                Padding   = new Padding(16, 12, 16, 12),
-                Cursor    = Cursors.Hand
+                Padding = new Padding(16, 12, 16, 12),
+                Cursor = Cursors.Hand
             };
             card.Resize += (s, e) => card.Region = Region.FromHrgn(
                 CreateRoundRectRgn(0, 0, card.Width, card.Height, 10, 10));
-            card.Paint += (s, e) => DrawRoundedBorder(e.Graphics, card);  
-            card.Click += (s, e) => OpenAddSpending(budget);              
+            card.Paint += (s, e) => DrawRoundedBorder(e.Graphics, card);
+            card.Click += (s, e) => OpenAddSpending(budget);
 
             var dot = MakeDot(budget.CategoryColor);
             dot.Location = new Point(16, 23);
@@ -238,19 +238,34 @@ namespace AOOP_PROJECTT.Tabs
 
             card.Controls.Add(new Label
             {
-                Text      = budget.Name,
-                Font      = new Font("Segoe UI", 10f, FontStyle.Bold),
+                Text = budget.Name,
+                Font = new Font("Segoe UI", 10f, FontStyle.Bold),
                 ForeColor = Color.White,
-                AutoSize  = true,
-                Location  = new Point(34, 20)
+                AutoSize = true,
+                Location = new Point(34, 20)
             });
+
+            var btnDelete = MakeDeleteButton();
+            card.Controls.Add(btnDelete);
+            card.Resize += (s, e) =>
+                btnDelete.Location = new Point(card.Width - btnDelete.Width - 60, 13);
+            btnDelete.Location = new Point(card.Width - btnDelete.Width - 60, 13);
+            btnDelete.Click += (s, e) =>
+            {
+                btnDelete.Click += (s, e) =>
+                {
+                    BudgetRepository.DeleteBudget(budget.BudgetId);
+                    _budgets.Remove(budget);
+                    RefreshAll();
+                };
+            };
 
             var lblPercent = new Label
             {
-                Text      = $"{(int)budget.ProgressPercent}%",
-                Font      = new Font("Segoe UI", 9f, FontStyle.Bold),
+                Text = $"{(int)budget.ProgressPercent}%",
+                Font = new Font("Segoe UI", 9f, FontStyle.Bold),
                 ForeColor = PctColor(budget.ProgressPercent),
-                AutoSize  = true
+                AutoSize = true
             };
             card.Controls.Add(lblPercent);
             card.Resize += (s, e) =>
@@ -266,41 +281,41 @@ namespace AOOP_PROJECTT.Tabs
 
             card.Controls.Add(new Label
             {
-                Text      = $"₱{budget.Spent:N0}",
-                Font      = new Font("Segoe UI", 11f, FontStyle.Bold),
+                Text = $"₱{budget.Spent:N0}",
+                Font = new Font("Segoe UI", 11f, FontStyle.Bold),
                 ForeColor = Color.White,
-                AutoSize  = true,
-                Location  = new Point(16, 76)
+                AutoSize = true,
+                Location = new Point(16, 76)
             });
             card.Controls.Add(new Label
             {
-                Text      = $"of ₱{budget.Limit:N0} limit",
-                Font      = new Font("Segoe UI", 7.5f),
+                Text = $"of ₱{budget.Limit:N0} limit",
+                Font = new Font("Segoe UI", 7.5f),
                 ForeColor = SubText,
-                AutoSize  = true,
-                Location  = new Point(16, 100)
+                AutoSize = true,
+                Location = new Point(16, 100)
             });
 
             var lblRem = new Label
             {
-                Text      = $"₱{budget.Remaining:N0}",
-                Font      = new Font("Segoe UI", 11f, FontStyle.Bold),
+                Text = $"₱{budget.Remaining:N0}",
+                Font = new Font("Segoe UI", 11f, FontStyle.Bold),
                 ForeColor = budget.Remaining < budget.Limit * 0.1
                     ? Color.FromArgb(255, 80, 80) : GreenAmt,
-                AutoSize  = true
+                AutoSize = true
             };
             var lblRemLbl = new Label
             {
-                Text      = "remaining",
-                Font      = new Font("Segoe UI", 7.5f),
+                Text = "remaining",
+                Font = new Font("Segoe UI", 7.5f),
                 ForeColor = SubText,
-                AutoSize  = true
+                AutoSize = true
             };
             card.Controls.Add(lblRem);
             card.Controls.Add(lblRemLbl);
             card.Resize += (s, e) =>
             {
-                lblRem.Location    = new Point(card.Width - lblRem.Width - 16, 76);
+                lblRem.Location = new Point(card.Width - lblRem.Width - 16, 76);
                 lblRemLbl.Location = new Point(card.Width - lblRemLbl.Width - 16, 96);
             };
 
@@ -329,39 +344,54 @@ namespace AOOP_PROJECTT.Tabs
 
             card.Controls.Add(new Label
             {
-                Text      = goal.Name,
-                Font      = new Font("Segoe UI", 10f, FontStyle.Bold),
+                Text = goal.Name,
+                Font = new Font("Segoe UI", 10f, FontStyle.Bold),
                 ForeColor = Color.White,
-                AutoSize  = true,
-                Location  = new Point(34, 13)
+                AutoSize = true,
+                Location = new Point(34, 13)
             });
+
+            var btnDelete = MakeDeleteButton();
+            card.Controls.Add(btnDelete);
+            card.Resize += (s, e) =>
+                btnDelete.Location = new Point(card.Width - btnDelete.Width - 60, 13);
+            btnDelete.Location = new Point(card.Width - btnDelete.Width - 60, 13);
+            btnDelete.Click += (s, e) =>
+            {
+                btnDelete.Click += (s, e) =>
+                {
+                    BudgetRepository.DeleteGoal(goal.GoalId);
+                    _goals.Remove(goal);
+                    RefreshAll();
+                };
+            };
 
             var lblPct = new Label
             {
-                Text      = $"{(int)goal.ProgressPercent}%",
-                Font      = new Font("Segoe UI", 9f, FontStyle.Bold),
+                Text = $"{(int)goal.ProgressPercent}%",
+                Font = new Font("Segoe UI", 9f, FontStyle.Bold),
                 ForeColor = goal.GoalColor,
-                AutoSize  = true
+                AutoSize = true
             };
             card.Controls.Add(lblPct);
             card.Resize += (s, e) =>
-                lblPct.Location = new Point(card.Width - lblPct.Width - 14, 14);
+                lblPct.Location = new Point(card.Width - lblPct.Width - 14, 18);
 
             card.Controls.Add(new Label
             {
-                Text      = $"₱{goal.Saved:N0}",
-                Font      = new Font("Segoe UI", 16f, FontStyle.Bold),
+                Text = $"₱{goal.Saved:N0}",
+                Font = new Font("Segoe UI", 16f, FontStyle.Bold),
                 ForeColor = Color.White,
-                AutoSize  = true,
-                Location  = new Point(14, 34)
+                AutoSize = true,
+                Location = new Point(14, 34)
             });
             card.Controls.Add(new Label
             {
-                Text      = $"of ₱{goal.Target:N0} target",
-                Font      = new Font("Segoe UI", 7.5f),
+                Text = $"of ₱{goal.Target:N0} target",
+                Font = new Font("Segoe UI", 7.5f),
                 ForeColor = SubText,
-                AutoSize  = true,
-                Location  = new Point(16, 70)
+                AutoSize = true,
+                Location = new Point(16, 70)
             });
 
             var track = MakeTrack(card, 93);
@@ -374,11 +404,11 @@ namespace AOOP_PROJECTT.Tabs
 
             card.Controls.Add(new Label
             {
-                Text      = goal.IsComplete ? "✓ Goal reached!" : $"₱{goal.Remaining:N0} to go",
-                Font      = new Font("Segoe UI", 8f),
+                Text = goal.IsComplete ? "✓ Goal reached!" : $"₱{goal.Remaining:N0} to go",
+                Font = new Font("Segoe UI", 8f),
                 ForeColor = goal.IsComplete ? GreenAmt : SubText,
-                AutoSize  = true,
-                Location  = new Point(16, 107)
+                AutoSize = true,
+                Location = new Point(16, 107)
             });
 
             new ToolTip().SetToolTip(card, "Click to add contribution");
@@ -442,6 +472,40 @@ namespace AOOP_PROJECTT.Tabs
         }
 
         // ── HELPERS
+
+        private Panel MakeDeleteButton()
+        {
+            var circle = new Panel
+            {
+                Width = 28,
+                Height = 28,
+                BackColor = Color.Transparent,
+                Cursor = Cursors.Hand
+            };
+
+            var lbl = new Label
+            {
+                Text = "X",
+                Font = new Font("Segoe UI", 6.5f, FontStyle.Bold),
+                ForeColor = Color.White,
+                AutoSize = false,
+                Size = new Size(28, 28),
+                Location = new Point(0, 0),
+                TextAlign = ContentAlignment.MiddleCenter,
+                Enabled = false
+            };
+
+            circle.Paint += (s, e) =>
+            {
+                e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+                using var brush = new SolidBrush(Color.FromArgb(200, 60, 60));
+                e.Graphics.FillEllipse(brush, 1, 1, circle.Width - 3, circle.Height - 3);
+            };
+
+            circle.Controls.Add(lbl);
+            return circle;
+        }
+
         private Panel MakeTrack(Panel parent, int y)
         {
             var track = new Panel
