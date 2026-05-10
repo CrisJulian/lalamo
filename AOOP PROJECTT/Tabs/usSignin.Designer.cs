@@ -90,7 +90,8 @@
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(281, 31);
             txtEmail.TabIndex = 27;
-            txtEmail.Text = "you@example.com";
+            txtEmail.Text = "ex. Caramel Macchiato";
+            txtEmail.TextChanged += txtEmail_TextChanged;
             txtEmail.Enter += txtEmail_Enter;
             txtEmail.Leave += txtEmail_Leave;
             // 
@@ -291,9 +292,9 @@
             label10.ForeColor = Color.FromArgb(130, 145, 170);
             label10.Location = new Point(651, 246);
             label10.Name = "label10";
-            label10.Size = new Size(86, 15);
+            label10.Size = new Size(65, 15);
             label10.TabIndex = 36;
-            label10.Text = "Email Address";
+            label10.Text = "Username";
             label10.Click += label10_Click;
             // 
             // label11

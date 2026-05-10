@@ -292,9 +292,9 @@
             label11.ForeColor = Color.FromArgb(130, 145, 170);
             label11.Location = new Point(645, 185);
             label11.Name = "label11";
-            label11.Size = new Size(104, 15);
+            label11.Size = new Size(65, 15);
             label11.TabIndex = 23;
-            label11.Text = "EMAIL ADDRESS";
+            label11.Text = "Username";
             // 
             // label12
             // 
@@ -377,7 +377,7 @@
             label17.Name = "label17";
             label17.Size = new Size(211, 16);
             label17.TabIndex = 2;
-            label17.Text = "Password: password123";
+            label17.Text = "Password: demo123";
             label17.Click += label17_Click;
             // 
             // label16
@@ -387,7 +387,7 @@
             label16.Name = "label16";
             label16.Size = new Size(211, 16);
             label16.TabIndex = 1;
-            label16.Text = "Email: juan@example.com";
+            label16.Text = "Username: demo";
             label16.Click += label16_Click;
             // 
             // label15

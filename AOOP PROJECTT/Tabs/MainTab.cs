@@ -27,7 +27,7 @@ namespace AOOP_PROJECTT
                 }
             }
 
-            label1.Text = SessionManager.FullName;
+            label1.Text = SessionManager.Username;
             label2.Text = SessionManager.AccountType;
         }
 

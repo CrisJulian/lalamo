@@ -78,6 +78,7 @@ namespace AOOP_PROJECTT
                                 SessionManager.FullName = reader.GetString(1);
                                 SessionManager.Email = reader.GetString(2);
                                 SessionManager.Phone = reader.GetString(3);
+                                SessionManager.Username = reader.GetString(2);
                                 SessionManager.Location = reader.GetString(4);
                                 SessionManager.AccountType = reader.GetString(5);
                                 SessionManager.MemberSince = reader.GetDateTime(6);
@@ -187,7 +188,7 @@ namespace AOOP_PROJECTT
         private void button2_Click(object sender, EventArgs e)
         {
             SessionManager.UserId = 99;
-            SessionManager.FullName = "Demo User";
+            SessionManager.Username = "demo";
             SessionManager.Email = "demo@example.com";
             SessionManager.AccountType = "PERSONAL";
             SessionManager.Phone = "";

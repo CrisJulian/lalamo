@@ -4,6 +4,7 @@ namespace AOOP_PROJECTT.SupportClasses
     {
         public static int UserId { get; set; } = 0;
         public static string FullName { get; set; } = "";
+        public static string Username { get; set; } = ""; // 👈 add this
         public static string Email { get; set; } = "";
         public static string Phone { get; set; } = "";
         public static string Location { get; set; } = "";
@@ -16,6 +17,7 @@ namespace AOOP_PROJECTT.SupportClasses
         {
             UserId = 0;
             FullName = "";
+            Username = ""; // 👈 add this
             Email = "";
             Phone = "";
             Location = "";

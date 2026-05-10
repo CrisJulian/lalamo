@@ -11,26 +11,22 @@ namespace AOOP_PROJECTT
         public usSignin()
         {
             InitializeComponent();
-
-            button1.Click += button1_Click;
             button2.Click += button2_Click;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            AccountCreated?.Invoke(this, EventArgs.Empty);
-        }
+        private void button1_Click(object sender, EventArgs e) { }
 
         private void button2_Click(object sender, EventArgs e)
         {
             NavigateToLogin?.Invoke(this, EventArgs.Empty);
         }
 
-        private void usSignin_Load(object sender, EventArgs e) 
+        private void usSignin_Load(object sender, EventArgs e)
         {
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.Image = Properties.Resources.backgroundremover_removebg_preview;
         }
+
         private void textBox16_TextChanged(object sender, EventArgs e) { }
 
         private void txtFullName_Enter(object sender, EventArgs e)
@@ -53,7 +49,7 @@ namespace AOOP_PROJECTT
 
         private void txtEmail_Enter(object sender, EventArgs e)
         {
-            if (txtEmail.Text == "you@example.com")
+            if (txtEmail.Text == "ex. Caramel Macchiato")
             {
                 txtEmail.Text = "";
                 txtEmail.ForeColor = Color.White;
@@ -115,6 +111,7 @@ namespace AOOP_PROJECTT
             string email = txtEmail.Text.Trim();
             string password = txtPassword.Text.Trim();
 
+            // Basic field checks
             if (string.IsNullOrEmpty(fullName) || fullName == "Juan Dela Cruz" ||
                 string.IsNullOrEmpty(email) || email == "you@example.com" ||
                 string.IsNullOrEmpty(password) || password == "At least 8 characters")
@@ -123,6 +120,29 @@ namespace AOOP_PROJECTT
                 return;
             }
 
+            // Password rules
+            if (password.Length < 8)
+            {
+                MessageBox.Show("Password must be at least 8 characters.");
+                return;
+            }
+
+            string[] weakPasswords = { "12345678", "password", "11111111", "00000000", "abcdefgh", "qwertyui" };
+            if (Array.Exists(weakPasswords, p => p == password.ToLower()))
+            {
+                MessageBox.Show("Password is too weak. Please choose a stronger password.");
+                return;
+            }
+
+            bool hasUpper = password.Any(char.IsUpper);
+            bool hasDigit = password.Any(char.IsDigit);
+            if (!hasUpper || !hasDigit)
+            {
+                MessageBox.Show("Password must contain at least one uppercase letter and one number.");
+                return;
+            }
+
+            // Confirm password check
             if (txtPassword.Text != txtConfirmPassword.Text)
             {
                 MessageBox.Show("Passwords do not match.");
@@ -146,8 +166,8 @@ namespace AOOP_PROJECTT
 
                         if (rows > 0)
                         {
-                            MessageBox.Show("Account created successfully!");
-                            AccountCreated?.Invoke(this, EventArgs.Empty);
+                            MessageBox.Show("Account created successfully! Please sign in.");
+                            NavigateToLogin?.Invoke(this, EventArgs.Empty);
                         }
                         else
                             MessageBox.Show("Something went wrong.");
@@ -160,46 +180,21 @@ namespace AOOP_PROJECTT
             }
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox13_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        private void pictureBox1_Click(object sender, EventArgs e) { }
+        private void textBox2_TextChanged(object sender, EventArgs e) { }
+        private void label6_Click(object sender, EventArgs e) { }
+        private void label8_Click(object sender, EventArgs e) { }
+        private void label10_Click(object sender, EventArgs e) { }
+        private void textBox13_TextChanged(object sender, EventArgs e) { }
+        private void label11_Click(object sender, EventArgs e) { }
         private void pictureBox1_Click_1(object sender, EventArgs e)
         {
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
         }
 
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
 
+        }
     }
 }

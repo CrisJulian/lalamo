@@ -42,11 +42,8 @@
             panel7 = new Panel();
             label7 = new Label();
             panel6 = new Panel();
-            label34 = new Label();
             label33 = new Label();
             label32 = new Label();
-            label30 = new Label();
-            label31 = new Label();
             label28 = new Label();
             label29 = new Label();
             label27 = new Label();
@@ -236,34 +233,19 @@
             // panel6
             // 
             panel6.BackColor = Color.FromArgb(24, 28, 38);
-            panel6.Controls.Add(label34);
             panel6.Controls.Add(label33);
             panel6.Controls.Add(label32);
-            panel6.Controls.Add(label30);
-            panel6.Controls.Add(label31);
             panel6.Controls.Add(label28);
             panel6.Controls.Add(label29);
             panel6.Controls.Add(label27);
             panel6.Controls.Add(label26);
             panel6.Controls.Add(label25);
             panel6.ForeColor = Color.Gold;
-            panel6.Location = new Point(489, 181);
+            panel6.Location = new Point(486, 251);
             panel6.Name = "panel6";
-            panel6.Size = new Size(429, 290);
+            panel6.Size = new Size(429, 214);
             panel6.TabIndex = 12;
             panel6.Paint += panel6_Paint;
-            // 
-            // label34
-            // 
-            label34.AutoSize = true;
-            label34.BackColor = Color.FromArgb(24, 28, 38);
-            label34.Font = new Font("SimSun", 10.75F, FontStyle.Bold);
-            label34.ForeColor = Color.Gold;
-            label34.Location = new Point(325, 232);
-            label34.Name = "label34";
-            label34.Size = new Size(97, 15);
-            label34.TabIndex = 23;
-            label34.Text = "Preference";
             // 
             // label33
             // 
@@ -288,29 +270,6 @@
             label32.Size = new Size(69, 15);
             label32.TabIndex = 21;
             label32.Text = "PHP (₱)";
-            // 
-            // label30
-            // 
-            label30.AutoSize = true;
-            label30.Font = new Font("SimSun", 9.75F);
-            label30.ForeColor = Color.FromArgb(130, 145, 170);
-            label30.Location = new Point(20, 236);
-            label30.Name = "label30";
-            label30.Size = new Size(238, 13);
-            label30.TabIndex = 20;
-            label30.Text = "Receive budget alerts and updates";
-            // 
-            // label31
-            // 
-            label31.AutoSize = true;
-            label31.BackColor = Color.FromArgb(24, 28, 38);
-            label31.Font = new Font("SimSun", 10.75F, FontStyle.Bold);
-            label31.ForeColor = Color.White;
-            label31.Location = new Point(20, 212);
-            label31.Name = "label31";
-            label31.Size = new Size(178, 15);
-            label31.TabIndex = 19;
-            label31.Text = "Email Notifications";
             // 
             // label28
             // 
@@ -692,13 +651,10 @@
         private Label label13;
         private Label label23;
         private Label label24;
-        private Label label30;
-        private Label label31;
         private Label label28;
         private Label label29;
         private Label label27;
         private Label label26;
-        private Label label34;
         private Label label33;
         private Label label32;
         private Button button1;
