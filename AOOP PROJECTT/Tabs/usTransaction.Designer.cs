@@ -1,6 +1,6 @@
 ﻿namespace AOOP_PROJECTT
 {
-    partial class usTransactionNew
+    partial class usTransaction
     {
         private System.ComponentModel.IContainer components = null;
 

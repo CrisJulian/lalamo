@@ -4,7 +4,7 @@ using System.Drawing.Drawing2D;
 
 namespace AOOP_PROJECTT.Tabs
 {
-    public class AnalyticsTab : UserControl
+    public class usAnalyticsTab : UserControl
     {
         private static readonly Color BgDark = Color.FromArgb(15, 17, 23);
         private static readonly Color CardBg = Color.FromArgb(24, 28, 38);
@@ -30,7 +30,7 @@ namespace AOOP_PROJECTT.Tabs
         private Button _btnMonthly, _btnWeekly, _btnDaily;
 
 
-        public AnalyticsTab()
+        public usAnalyticsTab()
         {
             BackColor = BgDark;
             Dock = DockStyle.Fill;

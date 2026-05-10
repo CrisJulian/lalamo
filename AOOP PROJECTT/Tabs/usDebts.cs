@@ -9,7 +9,7 @@ using CommonCents;
 
 namespace AOOP_PROJECTT.Tabs
 {
-    public class DebtsTab : UserControl
+    public class usDebts : UserControl
     {
         private List<Debt> _debts = new List<Debt>();
 
@@ -23,7 +23,7 @@ namespace AOOP_PROJECTT.Tabs
         private static readonly Color RedAmt     = Color.FromArgb(255, 107, 107);
         private static readonly Color SubText    = Color.FromArgb(130, 145, 170);
 
-        public DebtsTab()
+        public usDebts()
         {
             BackColor = BgDark;
             Dock      = DockStyle.Fill;

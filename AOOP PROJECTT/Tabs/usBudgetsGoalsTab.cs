@@ -9,7 +9,7 @@ using AOOP_PROJECTT.SupportClasses;
 
 namespace AOOP_PROJECTT.Tabs
 {
-    public class BudgetsGoalsTab : UserControl
+    public class usBudgetsGoalsTab : UserControl
     {
         private List<Budget>      _budgets = new List<Budget>();
         private List<SavingsGoal> _goals   = new List<SavingsGoal>();
@@ -23,7 +23,7 @@ namespace AOOP_PROJECTT.Tabs
         private static readonly Color SubText  = Color.FromArgb(130, 145, 170);
         private static readonly Color GreenAmt = Color.FromArgb(80, 220, 120);
 
-        public BudgetsGoalsTab()
+        public usBudgetsGoalsTab()
         {
             BackColor = BgDark;
             Dock      = DockStyle.Fill;

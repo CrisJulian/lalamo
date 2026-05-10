@@ -4,11 +4,11 @@ using AOOP_PROJECTT.SupportClasses;
 
 namespace AOOP_PROJECTT
 {
-    public partial class usTransactionNew : UserControl
+    public partial class usTransaction : UserControl
     {
         private string activeTypeFilter = "All";
 
-        public usTransactionNew()
+        public usTransaction()
         {
             InitializeComponent();
             txtSearch.PlaceholderText = "Search transactions...";

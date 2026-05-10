@@ -142,7 +142,7 @@ namespace AOOP_PROJECTT
         {
             SetActiveButton(button3);
             rightsidepanel.Controls.Clear();
-            var transaction = new usTransactionNew();
+            var transaction = new usTransaction();
             transaction.Dock = DockStyle.Fill;
             rightsidepanel.Controls.Add(transaction);
             transaction.BringToFront();
@@ -152,7 +152,7 @@ namespace AOOP_PROJECTT
         {
             SetActiveButton(button4);
             rightsidepanel.Controls.Clear();
-            var analytics = new AnalyticsTab();
+            var analytics = new usAnalyticsTab();
             analytics.Dock = DockStyle.Fill;
             rightsidepanel.Controls.Add(analytics);
         }
@@ -180,7 +180,7 @@ namespace AOOP_PROJECTT
         {
             SetActiveButton(button5);
             rightsidepanel.Controls.Clear();
-            var dashboard = new BudgetsGoalsTab();
+            var dashboard = new usBudgetsGoalsTab();
             dashboard.Dock = DockStyle.Fill;
             rightsidepanel.Controls.Add(dashboard);
         }
@@ -189,7 +189,7 @@ namespace AOOP_PROJECTT
         {
             SetActiveButton(button6);
             rightsidepanel.Controls.Clear();
-            var dashboard = new DebtsTab();
+            var dashboard = new usDebts();
             dashboard.Dock = DockStyle.Fill;
             rightsidepanel.Controls.Add(dashboard);
         }
