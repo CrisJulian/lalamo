@@ -563,14 +563,14 @@
             // 
             // panel2
             // 
-            panel2.BorderStyle = BorderStyle.FixedSingle;
             panel2.Controls.Add(button1);
             panel2.Controls.Add(myDateTextBox);
             panel2.Controls.Add(label2);
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(962, 54);
+            panel2.Size = new Size(963, 54);
             panel2.TabIndex = 8;
+            panel2.Paint += panel2_Paint;
             // 
             // button1
             // 
@@ -620,7 +620,7 @@
             label14.TabIndex = 4;
             label14.Text = "Data Management";
             // 
-            // UserControl1
+            // usSettings
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -633,7 +633,7 @@
             Controls.Add(panel3);
             Controls.Add(panel4);
             Controls.Add(panel2);
-            Name = "UserControl1";
+            Name = "usSettings";
             Size = new Size(963, 649);
             Load += UserControl1_Load;
             panel8.ResumeLayout(false);

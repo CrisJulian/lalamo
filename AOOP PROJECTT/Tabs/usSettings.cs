@@ -10,8 +10,8 @@ namespace WinFormsApp1
         public usSettings()
         {
             InitializeComponent();
-            myDateTextBox.Text = DateTime.Now.ToString("ddd, MMM d, yyyy"); 
-            myDateTextBox.ReadOnly = true; 
+            myDateTextBox.Text = DateTime.Now.ToString("ddd, MMM d, yyyy");
+            myDateTextBox.ReadOnly = true;
             ApplyIconBadges();
             AddRoundedBorders();
         }
@@ -83,7 +83,7 @@ namespace WinFormsApp1
             string text = lbl.Text;
             Font font = lbl.Font;
 
-            lbl.Text = ""; 
+            lbl.Text = "";
             lbl.BackColor = lbl.Parent?.BackColor ?? Color.FromArgb(24, 28, 38);
 
             lbl.Paint += (s, e) =>
@@ -248,6 +248,13 @@ namespace WinFormsApp1
         private void panel8_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+            using var pen = new Pen(Color.FromArgb(50, 60, 80), 1f);
+            e.Graphics.DrawLine(pen, 0, panel2.Height - 1,
+                                panel2.Width, panel2.Height - 1);
         }
     }
 }
